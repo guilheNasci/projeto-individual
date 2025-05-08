@@ -5,50 +5,72 @@
 html, body {
   margin: 0;
   padding: 0;
+  background: #2A7B9B;
+background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(244, 213, 141, 1) 89%, rgba(244, 213, 141, 1) 40%);
+  height: 100vh;
 }
 
 .header {
   background-color: #F4D58D;
-  padding: 4px;
   display: flex;
-  height: 70px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
 }
 
 .container {
-  width: 50%;
-  align-content: center;
-  
+  width: 100%;
+  align-self: center;
+  display: flex;
 }
 
 
 .navbar {
   list-style: none;
   display: flex;
-  gap: 55px;
-  margin-left: 300px;
+  gap: 20%;
+  margin-left: 20%;
+  align-items: center;
   
   
 }
 
 .navbar li a {
+  display: flex;
   text-decoration: none;
   color: #001427;
   font-family: "Roboto Slab", serif;
 }
 
 .logo{
+  display: flex;
   width: 30%;
+  align-self:flex-start;
+  margin-right: 55%;
 }
 
 .header .logo  img{
-  width: 40%;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  width: 100%;
   display: flex;
 }
 .header .logo2{
   font-family: "Roboto Slab", serif;
-  font-size: 12px;
-  width: 10%;
+  font-size: 40px;
   display: flex;
-  margin-left: 405px;
   align-self: center;
+  align-items: center;
+  position: absolute;
+  letter-spacing: 4px;
+  color: #8D0801;
+  text-decoration: none;
+}
+
+
+.mainCard {
+  display: flex;
+  padding: 300px;
 }
