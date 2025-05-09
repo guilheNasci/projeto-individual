@@ -51,7 +51,7 @@ background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 
   display: flex;
   width: 30%;
   align-self:flex-start;
-  margin-right: 55%;
+  margin-right: 50%;
 }
 
 .header .logo  img{
@@ -61,7 +61,7 @@ background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 
   width: 100%;
   display: flex;
 }
-.header .logo2{
+.header .logo2 {
   font-family: "Roboto Slab", serif;
   font-size: 40px;
   display: flex;
@@ -70,28 +70,62 @@ background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 
   position: absolute;
   letter-spacing: 4px;
   color: #8D0801;
-  text-decoration: none;
+  color: inherit;
 }
 
+.header .logo2 a {
+  text-decoration: none;
+  color: #8D0801;
+}
 
-.textoMain {
+.mainCard {
   display: flex;
   padding-top: 120px;
   position: absolute;
   margin-top: 6%;
+  margin-left: 15%;  display: flex;
+  padding-top: 120px;
+  position: absolute;
+  margin-top: 6%;
+  margin-left: 15%;
+}
+
+
+.textoMain {
+
   color: #8D0801;
   font-weight: bold;
-  margin-left: 15%;
   font-size: 75px;
   font-family: "Inter", sans-serif;
+  
 }
 
 .starsMain {
   display: flex;
-  padding-top: 440px;
-  margin-left: 14%;
+  margin-top: 210px;
+  position: absolute;
+  margin-left: -17px;
+  width: 85%;
 }
 
 .starsMain img{
-  width: 20%;
+  width: 100%;
+  display: flex;
+  position: absolute;
+}
+
+
+.buttonMainCard {
+  padding: 10px;
+  margin-left: 25px;
+  margin-top: 145px;
+  border-radius: 6px;
+  font-family: "Inter", sans-serif;
+  color:#F4D58D;
+  background-color: #8D0801;
+}
+.buttonMainCard a{
+  text-decoration: none;
+  color: #F4D58D;
+  font-weight: bold;
 }
