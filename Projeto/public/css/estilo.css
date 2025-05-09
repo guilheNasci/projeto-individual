@@ -10,7 +10,8 @@ html, body {
   padding: 0;
   background: #2A7B9B;
 background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(244, 213, 141, 1) 89%, rgba(244, 213, 141, 1) 40%);
-  height: 100vh;
+  height: 1100px;
+  background-repeat: no-repeat;
 }
 
 .header {
@@ -80,14 +81,13 @@ background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 
 
 .mainCard {
   display: flex;
-  padding-top: 120px;
+  padding-top: 100px;
   position: absolute;
-  margin-top: 6%;
   margin-left: 15%;  display: flex;
   padding-top: 120px;
   position: absolute;
-  margin-top: 6%;
-  margin-left: 15%;
+  margin-top: 4%;
+  margin-left: 12%;
 }
 
 
@@ -95,37 +95,52 @@ background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 
 
   color: #8D0801;
   font-weight: bold;
-  font-size: 75px;
+  font-size: 100px;
   font-family: "Inter", sans-serif;
   
 }
 
 .starsMain {
   display: flex;
-  margin-top: 210px;
+  margin-top: 280px;
+  margin-left: -30px;
   position: absolute;
-  margin-left: -17px;
-  width: 85%;
+  width: 80%;
 }
 
 .starsMain img{
   width: 100%;
   display: flex;
-  position: absolute;
+
 }
 
 
 .buttonMainCard {
+  display: flex;
+  position: absolute;  
   padding: 10px;
-  margin-left: 25px;
-  margin-top: 145px;
+  margin-top: 34%;
+  margin-left: 12.2%;
   border-radius: 6px;
+  text-decoration: none;
   font-family: "Inter", sans-serif;
   color:#F4D58D;
   background-color: #8D0801;
 }
 .buttonMainCard a{
   text-decoration: none;
-  color: #F4D58D;
-  font-weight: bold;
+  color: #ffb300;
+}
+
+
+.mainImage  img{
+
+  margin-top: 120px;
+  margin-left: 980px;
+  width: 40%;
+}
+.mainImage2 img{
+  width: 50%;
+  display: flex;
+  padding-top: 100px;
 }
