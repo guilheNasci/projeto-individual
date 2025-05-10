@@ -10,7 +10,7 @@ html, body {
   padding: 0;
   background: #2A7B9B;
 background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(244, 213, 141, 1) 89%, rgba(244, 213, 141, 1) 40%);
-  height: 1100px;
+  height: 1300px;
   background-repeat: no-repeat;
 }
 
@@ -139,8 +139,49 @@ background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 
   margin-left: 980px;
   width: 40%;
 }
+.mainImage2{
+  max-width: 47%;
+  align-items: center;
+}
 .mainImage2 img{
-  width: 50%;
+  width: 100%;
+  margin-left: 3.5%;
+  margin-top: 3%;
+ 
+  top: 300px;
+}
+
+.mainImage2 p{
   display: flex;
-  padding-top: 100px;
+  margin-left: 50%;
+
+}
+
+.imgText2 {
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  color: #2A7B9B;
+  margin-left: 51%;
+  margin-top: 6%;
+
+}
+
+.imgText2 .dois {
+  margin-top: 15%;
+  margin-left: 55%;
+}
+
+
+
+footer {
+  margin-bottom: 0;
+  padding: 50px;
+  background-color: #F4D58D;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  align-content: center;
 }
