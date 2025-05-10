@@ -10,7 +10,7 @@ html, body {
   padding: 0;
   background: #2A7B9B;
 background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(244, 213, 141, 1) 89%, rgba(244, 213, 141, 1) 40%);
-  height: 1300px;
+  height: 1400px;
   background-repeat: no-repeat;
 }
 
@@ -20,7 +20,6 @@ background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 
   width: 100%;
   align-items: center;
   justify-content: center;
-  position: fixed;
   
 }
 
@@ -84,9 +83,8 @@ background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 
   padding-top: 100px;
   position: absolute;
   margin-left: 15%;  display: flex;
-  padding-top: 120px;
   position: absolute;
-  margin-top: 4%;
+  margin-top: 0%;
   margin-left: 12%;
 }
 
@@ -119,7 +117,7 @@ background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 
   display: flex;
   position: absolute;  
   padding: 10px;
-  margin-top: 34%;
+  margin-top: 30%;
   margin-left: 12.2%;
   border-radius: 6px;
   text-decoration: none;
@@ -135,16 +133,17 @@ background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 
 
 .mainImage  img{
 
-  margin-top: 120px;
+  margin-top: 70px;
   margin-left: 980px;
   width: 40%;
 }
 .mainImage2{
   max-width: 47%;
   align-items: center;
+  position: absolute;
 }
 .mainImage2 img{
-  width: 100%;
+  width: 90%;
   margin-left: 3.5%;
   margin-top: 3%;
  
@@ -160,28 +159,47 @@ background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 
 .imgText2 {
   font-family: "Inter", sans-serif;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 20px;
+  margin-top: 110px;
   color: #2A7B9B;
-  margin-left: 51%;
-  margin-top: 6%;
+  text-align: center;
 
 }
 
 .imgText2 .dois {
-  margin-top: 15%;
-  margin-left: 55%;
+
 }
 
 
 
 footer {
+  font-family: "Inter", sans-serif;
+  width: 100%;
   margin-bottom: 0;
-  padding: 50px;
+  margin-top: 20%;
+  display: flex;
+  justify-content: center;
   background-color: #F4D58D;
 }
 
-.footer {
-  display: flex;
-  align-items: center;
-  align-content: center;
+footer img{
+ align-self: center;
+  width: 10%;
+}
+
+footer ul {
+  list-style: none;
+  
+}
+
+footer p {
+  margin-left: 40px;
+}
+.footer-content {
+  text-align: center;
+}
+.footer li a {
+    text-align: center;
+   text-decoration: none;
+   color: #001427;
 }
