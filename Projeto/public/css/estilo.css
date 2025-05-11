@@ -11,6 +11,7 @@ html, body {
   background: #2A7B9B;
 background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(244, 213, 141, 1) 89%, rgba(244, 213, 141, 1) 40%);
   height: 1400px;
+  
   background-repeat: no-repeat;
 }
 
@@ -58,7 +59,7 @@ background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 
   display: flex;
   align-self: center;
   align-items: center;
-  width: 100%;
+  max-width: 100%;
   display: flex;
 }
 .header .logo2 {
@@ -83,8 +84,8 @@ background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 
   padding-top: 100px;
   position: absolute;
   margin-left: 15%;  display: flex;
-  position: absolute;
   margin-top: 0%;
+  justify-content: space-between;
   margin-left: 12%;
 }
 
@@ -178,10 +179,10 @@ footer {
   font-family: "Inter", sans-serif;
   width: 100%;
   margin-bottom: 0;
-  margin-top: 20%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   background-color: #F4D58D;
+  border-top: 5px solid #8D0801 ;
 }
 
 footer img{
@@ -190,41 +191,36 @@ footer img{
 }
 
 footer ul {
-  list-style: none;
+ list-style: none;
   
-}
-
-footer p {
-  margin-left: 40px;
 }
 .footer-content {
   text-align: center;
 }
 .footer li a {
-    text-align: center;
-   text-decoration: none;
-   color: #001427;
+  
+  text-align: center;
+  text-decoration: none;
+  color: #001427;
 }
 
 
 
-
-.social {
+.albums {
   display: flex;
   font-family: "Inter", sans-serif;
-  background-color: #f8f3e6;
   border-radius: 50px;
 }
 
-.social .container {
+.albums .container {
   justify-content: center;
 }
 
-.box img {
+.card img {
   width: 300px;
 }
 
-.social .container .boxes {
+.albums .container .cards  {
 
   display: flex;
   justify-content: space-between;
@@ -233,15 +229,42 @@ footer p {
   margin-left: 3%;
 }
 
-.social p {
+.albums p {
   text-align: center;
   padding: 5px;
   border-radius: 10px;
-
+  
 }
 
-.box {
+.card {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.cadastre-se {
+  margin-top: 3%;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Inter", sans-serif;
+  text-align: right;
+  color: #2A7B9B;
+  
+  font-style: normal;
+  
+}
+
+.cardTitle a{
+  text-decoration: none;
+  color: #8D0801;
+  
+}
+
+.cadastre-se .discoImg img{
+  width: 100%;
+  margin: 0;
+}
+
+.cardTitle {
+  margin: auto;
 }
