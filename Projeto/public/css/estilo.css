@@ -160,9 +160,11 @@ background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 
   font-family: "Inter", sans-serif;
   font-weight: bold;
   font-size: 20px;
-  margin-top: 110px;
+  padding-top: 100px;
+  padding-bottom: 60px;
   color: #2A7B9B;
   text-align: center;
+
 
 }
 
@@ -210,6 +212,8 @@ footer p {
 .social {
   display: flex;
   font-family: "Inter", sans-serif;
+  background-color: #f8f3e6;
+  border-radius: 50px;
 }
 
 .social .container {
@@ -217,19 +221,23 @@ footer p {
 }
 
 .box img {
-  width: 60%;
+  width: 300px;
 }
 
 .social .container .boxes {
+
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding: 30px 0;
+  margin-left: 3%;
 }
 
 .social p {
   text-align: center;
-  background-color: #2A7B9B;
+  padding: 5px;
+  border-radius: 10px;
+
 }
 
 .box {
