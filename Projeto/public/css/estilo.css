@@ -160,8 +160,8 @@ background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 
 .imgText2 {
   font-family: "Inter", sans-serif;
   font-weight: bold;
-  font-size: 20px;
-  padding-top: 100px;
+  font-size: 25px;
+  margin-top: 10%;
   padding-bottom: 60px;
   color: #2A7B9B;
   text-align: center;
@@ -196,6 +196,11 @@ footer ul {
 }
 .footer-content {
   text-align: center;
+
+}
+.footer-content p{
+  text-align: center;
+  margin-left: 40px;
 }
 .footer li a {
   
@@ -207,6 +212,7 @@ footer ul {
 
 
 .albums {
+  
   display: flex;
   font-family: "Inter", sans-serif;
   border-radius: 50px;
@@ -244,7 +250,7 @@ footer ul {
 
 .exemplo {
   display: flex;
-  margin-top: 3%;
+  margin-top: 15%;
   width: 100%;
   background-image: url("/Projeto/public/assets/imgs/Metallica-Wallpaper-HD-Free-download.jpg");
   border-bottom: solid #8D0801 3px;
@@ -293,8 +299,9 @@ footer ul {
 
 
 .cadastre-se {
-  margin-top: 10%;
+  margin-top: 1%;
   display: flex;
+
   justify-content: space-between;
   font-family: "Inter", sans-serif;
   text-align: right;
@@ -304,15 +311,25 @@ footer ul {
   
 }
 
-.cardTitle a{
+.cardTitle  a{
   text-decoration: none;
   color: #8D0801;
+  font-weight: bold;
+  background-color: #e9c166;
+
   
+}
+
+.cardTitle h1 {
+  padding: 50px;
+  border-radius: 5px;
+  background-color: #F4D58D;
 }
 
 
 
 .cadastre-se .discoImg img{
+  
   width: 100%;
   
 }
