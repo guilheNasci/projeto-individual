@@ -201,9 +201,10 @@ footer ul {
 .footer-content p{
   text-align: center;
   margin-left: 40px;
+  font-weight: bold;
 }
 .footer li a {
-  
+  font-style: italic;
   text-align: center;
   text-decoration: none;
   color: #001427;
@@ -232,12 +233,13 @@ footer ul {
   justify-content: space-between;
   width: 100%;
   padding: 10px 0;
-  margin-left: 2%;
+  margin: 1%;
 }
 
 .albums p {
   text-align: center;
   padding: 5px;
+  width: 300px;
   border-radius: 10px;
   
 }
@@ -299,7 +301,7 @@ footer ul {
 
 
 .cadastre-se {
-  margin-top: 1%;
+  margin-top: 5%;
   display: flex;
 
   justify-content: space-between;
@@ -321,8 +323,9 @@ footer ul {
 }
 
 .cardTitle h1 {
-  padding: 50px;
-  border-radius: 5px;
+  padding: 200px;
+  font-size: 30px;
+  border-radius: 100px;
   background-color: #F4D58D;
 }
 
