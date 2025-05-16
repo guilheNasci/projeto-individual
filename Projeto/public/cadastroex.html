@@ -62,10 +62,6 @@
             <input id="nome_input" type="text" placeholder="Seu nome" />
           </div>
           <div class="campo">
-            <span>CPF</span>
-            <input id="cpf_input" type="number" placeholder="CPF">
-          </div>
-          <div class="campo">
             <span>E-mail:</span>
             <input id="email_input" type="text" placeholder="meuemail@provedor.com" />
           </div>
@@ -113,7 +109,6 @@
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
     var emailVar = email_input.value;
-    var cpfVar = cpf_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
     var codigoVar = codigo_input.value;
@@ -123,7 +118,6 @@
     if (
       nomeVar == "" ||
       emailVar == "" ||
-      cpfVar == "" ||
       senhaVar == "" ||
       confirmacaoSenhaVar == "" ||
       codigoVar == ""
@@ -162,7 +156,6 @@
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
         emailServer: emailVar,
-        cpfServer: cpfVar,
         senhaServer: senhaVar,
         idEmpresaVincularServer: idEmpresaVincular
       }),

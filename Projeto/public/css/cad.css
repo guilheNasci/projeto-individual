@@ -8,8 +8,10 @@ html, body {
     margin: 0;
     padding: 0;
     background: #2A7B9B;
-  background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(244, 213, 141, 1) 89%, rgba(244, 213, 141, 1) 40%);
-    background-repeat: no-repeat;
+    background-image: url("/assets/imgs/wywh.jpg");
+   background-repeat: no-repeat;
+   background-size: 105%
+
   }
   
   .header {
@@ -32,6 +34,14 @@ html, body {
     width: 100%;
     align-self: center;
     display: flex;
+  }
+
+  .backgroundimg {  
+    width: 100%;
+    padding-bottom: 100px;
+    padding-top: 100px;
+    background-size: 110%;
+
   }
   
   
@@ -102,7 +112,6 @@ html, body {
   }
   .cadastro form{
     box-sizing: border-box;
-
     margin-top: 30px;
   }
   .cadastro form .input-box{
@@ -178,7 +187,7 @@ html, body {
     font-family: "Inter", sans-serif;
     width: 100%;
     margin-bottom: 0;
-    margin-top: 4.6%;
+    margin-top: 9.8%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -190,6 +199,7 @@ html, body {
   
   footer ul {
    list-style: none;
+   margin-right: 3%;
     
   }
   .footer-content {
@@ -211,7 +221,7 @@ html, body {
   
 
  .container {
-  margin-top: 3%;
+  margin-top: 2%;
 }
   
 
@@ -242,6 +252,7 @@ html, body {
   }
   
   .card {
+
     width: 30%;
     background-color: #eccc7f;
     border-radius: 20px;
@@ -301,10 +312,11 @@ html, body {
   
   .botao {
     cursor: pointer;
-    font-family: "Inter", sans-serif;
+    font-family: "Roboto Slab", serif;
+    letter-spacing: 2px;
     border: solid 3px #001427;
     border-radius: 10px;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 18px;
     color: #F4D58D;
     background-color: #8D0801;
@@ -315,4 +327,7 @@ html, body {
   }
   
 
- 
+ .possui {
+  font-family: "Inter", sans-serif;
+  text-align: center;
+ }

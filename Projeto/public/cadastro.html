@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="./css/logincad.css">
+    <link rel="stylesheet" href="./css/cad.css">
 </head>
 <body>
     <header class="header">
@@ -30,9 +30,10 @@
             <span id="mensagem_erro"></span>
           </div>
         </div>
+      <div class="backgroundimg">
         <div class="container">
           <div class="card card-cadastro">
-            <h2>Cadastre-se!</h2>
+            <h2>Cadastre-se</h2>
             <div class="formulario">
               <!--
                              Para inserir mais um campo, copie uma das inputs abaixo.
@@ -42,7 +43,10 @@
                 <span>Nome:</span>
                 <input id="nome_input" type="text" placeholder="Seu nome" />
               </div>
-        
+              <div class="campo">
+                <span>Idade:</span>
+                <input type="date" id="nasc_input" placeholder="Data de nascimento">
+              </div>    
               <div class="campo">
                 <span>E-mail:</span>
                 <input id="email_input" type="text" placeholder="seuemail@email.com" />
@@ -58,12 +62,15 @@
               </div>
               <button class="botao" onclick="cadastrar()">Cadastrar</button>
             </div>
+            <div class="possui">
+              <p>Já possui uma conta? <a href="./login.html">Entre.</a></p>
+            </div>
             
             <div id="div_erros_login"></div>
           </div>
         </div>
       </div>
-
+    </div>
       <footer class="footer">
         <div class="footer-content">
     
@@ -89,6 +96,7 @@
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
+    var idadeVar = nasc_input.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
@@ -98,6 +106,7 @@
       nomeVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
+      idadeVar == "" ||
       confirmacaoSenhaVar == "" 
     ) {
       cardErro.style.display = "block";
@@ -122,6 +131,7 @@
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
+        idadeServer: idadeVar,
         emailServer: emailVar,
         senhaServer: senhaVar,
         idEmpresaVincularServer: idEmpresaVincular

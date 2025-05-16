@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Slab:wght@100..900&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Slab:wght@100..900&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #2A7B9B;
+    background-image: url("/assets/imgs/wywh.jpg");
+    background-repeat: no-repeat;
+    background-size: 105%
+
+  }
+  
+  .header {
+    background-color: #F4D58D;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    /* border-bottom: solid #8D0801 3px; */
+    
+  }
+  
+  .container {
+  
+    width: 100%;
+    align-self: center;
+    display: flex;
+  }
+
+    .containerHeader {
+    width: 100%;
+    align-self: center;
+    display: flex;
+  }
+  
+  
+  .navbar {
+    list-style: none;
+    display: flex;
+    gap: 20%;
+    margin-top: 1%;
+    margin-left: 20%;
+    align-items: center;
+    
+    
+  }
+  
+  .navbar li a {
+    display: flex;
+    text-decoration: none;
+    color: #001427;
+    font-family: "Roboto Slab", serif;
+  }
+  
+  .logo{
+    display: flex;
+    width: 30%;
+    align-self:flex-start;
+    margin-right: 50%;
+  }
+  
+  .header .logo  img{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    max-width: 230px;
+    display: flex;
+  }
+  .header .logo2 {
+    font-family: "Roboto Slab", serif;
+    font-size: 40px;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    position: absolute;
+    letter-spacing: 4px;
+    color: #8D0801;
+    color: inherit;
+  }
+  
+  .header .logo2 a {
+    text-decoration: none;
+    color: #8D0801;
+  }
+  
+  .login {
+    margin-top: 5%;
+    font-family: "Inter", sans-serif;
+    height: var(--tamanho-login);
+    background-size: cover;
+  }
+  
+  .login .container {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .card {
+    width: 25%;
+    background-color: #F4D58D;
+    border-radius: 10px;
+    border: solid 1.5px #8D0801;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: palevioletred;
+    flex-direction: column;
+    height: fit-content;
+    padding: 25px 0;
+  }
+  
+  .card h2 {
+    color: #8D0801;
+    margin: 0;
+    font-size: 30px;
+  }
+  
+  .formulario {
+    display: flex;
+    height: 100%;
+    width: 80%;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  
+  .formulario span {
+    font-size: 15px;
+    font-weight: 800;
+  }
+  
+  .formulario input {
+    border: 2px solid #8D0801;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0;
+  }
+  
+  .formulario select {
+    border: 2px solid #8D0801;
+    background-color: white;
+    color: gray;
+    height: 36px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0;
+  }
+  
+  .campo {
+    display: flex;
+    color: #8D0801;
+    flex-direction: column;
+    justify-content: start;
+    padding: 5px 0;
+  }
+  
+  .botao {
+    cursor: pointer;
+    font-family: "Inter", sans-serif;
+    border: 0;
+    border-radius: 2px;
+    font-weight: 600;
+    font-size: 18px;
+    color: #fff;
+    background-color: #8D0801;
+    width: 120px;
+    height: 30px;
+    align-self: center;
+    margin-top: 20px;
+  }
+  
+  .loading-div {
+    width: 50px;
+    display: none;
+  }
+  
+  .loading-div img {
+    height: 50px;
+    width: 50px;
+  }
+  
+  #div_erros_login {
+    display: none
+  }
+  
+  .possui {
+    font-family: "Inter", sans-serif;
+   }

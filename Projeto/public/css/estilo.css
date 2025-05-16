@@ -200,7 +200,7 @@ footer ul {
 }
 .footer-content p{
   text-align: center;
-  margin-left: 40px;
+  margin-left: 0px;
   font-weight: bold;
 }
 .footer li a {
@@ -208,6 +208,7 @@ footer ul {
   text-align: center;
   text-decoration: none;
   color: #001427;
+  margin-right: 50px;
 }
 
 
@@ -252,9 +253,12 @@ footer ul {
 
 .exemplo {
   display: flex;
-  margin-top: 15%;
+  margin-top: 8%;
   width: 100%;
-  background-image: url("/Projeto/public/assets/imgs/Metallica-Wallpaper-HD-Free-download.jpg");
+  background-image: url("/assets/imgs/Metallica-Wallpaper-HD-Free-download.jpg");
+  background-size: 100%;
+  padding-bottom: 125px;
+  padding-top: 125px;
   border-bottom: solid #8D0801 3px;
   border-top: solid #8D0801 3px;
 }
@@ -269,7 +273,7 @@ footer ul {
   width: 100%;
   gap: 300px;
 
-  margin-left: 33%;
+  margin-left: 32%;
 
 }
 
@@ -301,9 +305,11 @@ footer ul {
 
 
 .cadastre-se {
-  margin-top: 5%;
+  margin-top: 0%;
+  background-size: 100%;
+  padding: 310px;
   display: flex;
-
+  background-image: url("/assets/imgs/record-shelf-vintage-vinyl.jpg");
   justify-content: space-between;
   font-family: "Inter", sans-serif;
   text-align: right;
@@ -312,19 +318,23 @@ footer ul {
   font-style: normal;
   
 }
+.cardTitle {
+  
+}
 
-.cardTitle  a{
+.cardTitle h1 a{
   text-decoration: none;
   color: #8D0801;
+  text-align: center;
   font-weight: bold;
-  background-color: #e9c166;
 
   
 }
 
 .cardTitle h1 {
-  padding: 200px;
-  font-size: 30px;
+  padding: 100px;
+  font-size: 40px;
+  text-align: center;
   border-radius: 100px;
   background-color: #F4D58D;
 }
@@ -332,8 +342,8 @@ footer ul {
 
 
 .cadastre-se .discoImg img{
-  
-  width: 100%;
+  margin-top: 500px;
+  width: 300px;
   
 }
 

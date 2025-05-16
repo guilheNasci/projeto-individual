@@ -6,9 +6,9 @@
 comandos para mysql server
 */
 
-CREATE DATABASE aquatech;
+CREATE DATABASE reviewit;
 
-USE aquatech;
+USE reviewit;
 
 CREATE TABLE empresa (
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -18,11 +18,10 @@ CREATE TABLE empresa (
 );
 
 CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
+	idUsuario INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(50),
 	email VARCHAR(50),
 	senha VARCHAR(50),
-	idade date,
 
 );
 
