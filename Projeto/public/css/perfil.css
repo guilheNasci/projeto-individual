@@ -1,0 +1,80 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Slab:wght@100..900&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Slab:wght@100..900&display=swap');
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+  background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(244, 213, 141, 1) 89%, rgba(244, 213, 141, 1) 40%);
+    height: 1400px;
+    
+    background-repeat: no-repeat;
+  }
+  
+  .header {
+    background-color: #F4D58D;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
+  .container {
+    width: 100%;
+    align-self: center;
+    display: flex;
+  }
+  
+  
+  .navbar {
+    list-style: none;
+    display: flex;
+    gap: 20%;
+    margin-left: 20%;
+    align-items: center;
+    
+    
+  }
+  
+  .navbar li a {
+    display: flex;
+    text-decoration: none;
+    color: #001427;
+    font-family: "Roboto Slab", serif;
+  }
+  
+  .logo{
+    display: flex;
+    width: 30%;
+    align-self:flex-start;
+    margin-right: 50%;
+  }
+  
+  .header .logo  img{
+    display: flex;
+    align-self: center;
+    align-items: center;
+    max-width: 230px;
+    display: flex;
+  }
+  .header .logo2 {
+    font-family: "Roboto Slab", serif;
+    font-size: 40px;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    position: absolute;
+    letter-spacing: 4px;
+    color: #8D0801;
+    color: inherit;
+  }
+  
+  .header .logo2 a {
+    text-decoration: none;
+    color: #8D0801;
+  }
+  

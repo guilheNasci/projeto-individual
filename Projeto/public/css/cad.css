@@ -271,6 +271,13 @@ html, body {
     margin: 10px;
     font-size: 25px;
   }
+
+  .card_erro #mensagem_erro {
+    color: #8D0801;
+    text-align: center;
+    font-family: "Inter",sans-serif;
+    font-weight: bold;
+  }
   
   .formulario {
     font-family: "Inter", sans-serif;
@@ -289,6 +296,7 @@ html, body {
   .formulario input {
     border: 1.5px solid #8D0801;
     text-align: center;
+    height: 6px;
     border-radius: 10px;
     margin: 0;
   }
@@ -331,3 +339,13 @@ html, body {
   font-family: "Inter", sans-serif;
   text-align: center;
  }
+
+ .possui a {
+  color: #4070f4;
+ }
+
+ #div_erros_login {
+  font-family: "Roboto Slab", sans-serif;
+  color: #2A7B9B;
+  display: none
+}

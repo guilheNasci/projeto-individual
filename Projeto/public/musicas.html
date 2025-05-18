@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/estilo.css" />
+  <link rel="stylesheet" href="./css/musicas.css" />
   <title>Músicas</title>
 </head>
 
@@ -26,3 +26,100 @@
       </ul>
     </div>
   </header>
+
+  <div class="adicionarAlbum">
+    <div class="mainContainer">
+      <div class="containerAlbum">
+        <div class="title">
+          <h1>Adicionar álbum</h1>
+        </div>
+        <div class="row1">
+          <div class="nomeBanda">
+            <p>Nome do artista/Banda</p>
+            <input type="text" id="nomeBanda" placeholder="The Beatles">
+          </div>
+          <div class="nomeAlbum">
+            <p>Nome do albúm</p>
+            <input type="text" id="nomeAlbum" placeholder="Abbey Road">
+          </div>
+        </div>
+        <div class="row2">
+          <div class="optionsGen">
+            <p>Gênero musical</p>
+            <select name="Gênero" id="genero">
+              <option value="#">Selecione o gênero</option>
+              <option value="pop">Pop</option>
+              <option value="rock">Rock</option>
+              <option value="hip hop">Hip Hop</option>
+              <option value="rap">Rap</option>
+              <option value="r&b">R&B</option>
+              <option value="soul">Soul</option>
+              <option value="funk">Funk</option>
+              <option value="eletrônica">Eletrônica</option>
+              <option value="house">House</option>
+              <option value="techno">Techno</option>
+              <option value="trap">Trap</option>
+              <option value="reggae">Reggae</option>
+              <option value="ska">Ska</option>
+              <option value="samba">Samba</option>
+              <option value="bossa nova">Bossa Nova</option>
+              <option value="mpb">MPB</option>
+              <option value="forró">Forró</option>
+              <option value="sertanejo">Sertanejo</option>
+              <option value="country">Country</option>
+              <option value="folk">Folk</option>
+              <option value="jazz">Jazz</option>
+              <option value="blues">Blues</option>
+              <option value="gospel">Gospel</option>
+              <option value="clássica">Clássica</option>
+              <option value="lo-fi">Lo-fi</option>
+              <option value="k-pop">K-pop</option>
+              <option value="j-pop">J-pop</option>
+              <option value="rock clássico">Rock Clássico</option>
+              <option value="rock alternativo">Rock Alternativo</option>
+              <option value="hard rock">Hard Rock</option>
+              <option value="punk rock">Punk Rock</option>
+              <option value="grunge">Grunge</option>
+              <option value="metal">Metal</option>
+              <option value="heavy metal">Heavy Metal</option>
+              <option value="thrash metal">Thrash Metal</option>
+              <option value="death metal">Death Metal</option>
+              <option value="black metal">Black Metal</option>
+              <option value="doom metal">Doom Metal</option>
+              <option value="stoner rock">Stoner Rock</option>
+              <option value="glam rock">Glam Rock</option>
+              <option value="glam metal">Glam Metal</option>
+              <option value="industrial metal">Industrial Metal</option>
+              <option value="nu metal">Nu Metal</option>
+              <option value="alternative metal">Alternative Metal</option>
+              <option value="metalcore">Metalcore</option>
+              <option value="deathcore">Deathcore</option>
+              <option value="sludge metal">Sludge Metal</option>
+              <option value="folk metal">Folk Metal</option>
+              <option value="symphonic metal">Symphonic Metal</option>
+              <option value="progressive rock">Progressive Rock</option>
+              <option value="progressive metal">Progressive Metal</option>
+              <option value="post-rock">Post-Rock</option>
+              <option value="post-metal">Post-Metal</option>
+              <option value="math rock">Math Rock</option>
+              <option value="avant-garde metal">Avant-Garde Metal</option>
+              <option value="noise rock">Noise Rock</option>
+              <option value="experimental rock">Experimental Rock</option>
+              <option value="drone metal">Drone Metal</option>
+              <option value="jazz fusion">Jazz Fusion</option>
+              <option value="ambient">Ambient</option>
+              <option value="new age">New Age</option>
+              <option value="chillout">Chillout</option>
+
+            </select>
+          </div>
+          <div class="lancamento">
+            <p>Ano</p>
+            <input type="number" id="lancamento" maxlength="4" placeholder="1969">
+          </div>
+        </div>
+        <br>
+        <button class="button" onclick="adicionarAlbum()">Adicionar</button>
+      </div>
+
+    </div>

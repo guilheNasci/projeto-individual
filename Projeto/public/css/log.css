@@ -100,9 +100,10 @@ html, body {
   }
   
   .card {
-    width: 25%;
+    width: 30%;
+    margin-top: 3%;
     background-color: #F4D58D;
-    border-radius: 10px;
+    border-radius: 20px;
     border: solid 1.5px #8D0801;
     display: flex;
     align-items: center;
@@ -110,7 +111,7 @@ html, body {
     color: palevioletred;
     flex-direction: column;
     height: fit-content;
-    padding: 25px 0;
+    padding: 20px 0;
   }
   
   .card h2 {
@@ -118,11 +119,19 @@ html, body {
     margin: 0;
     font-size: 30px;
   }
+
+  .card_erro #mensagem_erro {
+    color: #8D0801;
+    text-align: center;
+    font-family: "Inter",sans-serif;
+    font-weight: bold;
+  }
   
   .formulario {
+    font-family: "Inter", sans-serif;
     display: flex;
     height: 100%;
-    width: 80%;
+    width: 50%;
     justify-content: space-around;
     flex-direction: column;
   }
@@ -133,16 +142,17 @@ html, body {
   }
   
   .formulario input {
-    border: 2px solid #8D0801;
+    border: 1.5x solid #8D0801;
     text-align: center;
+    height: 20px;
     border-radius: 10px;
     margin: 0;
   }
   
   .formulario select {
-    border: 2px solid #8D0801;
+    border: 2px solid #2A7B9B;
     background-color: white;
-    color: gray;
+    color: #F4D58D;
     height: 36px;
     text-align: center;
     border-radius: 10px;
@@ -159,15 +169,16 @@ html, body {
   
   .botao {
     cursor: pointer;
-    font-family: "Inter", sans-serif;
-    border: 0;
-    border-radius: 2px;
-    font-weight: 600;
+    font-family: "Roboto Slab", serif;
+    letter-spacing: 2px;
+    border: solid 3px #001427;
+    border-radius: 10px;
+    font-weight: 400;
     font-size: 18px;
-    color: #fff;
+    color: #F4D58D;
     background-color: #8D0801;
-    width: 120px;
-    height: 30px;
+    width: 200px;
+    height: 40px;
     align-self: center;
     margin-top: 20px;
   }
@@ -183,9 +194,53 @@ html, body {
   }
   
   #div_erros_login {
+    font-family: "Roboto Slab", sans-serif;
+    color: #2A7B9B;
     display: none
   }
   
   .possui {
+    color: #8D0801;
     font-family: "Inter", sans-serif;
+    text-align: center;
    }
+   .possui a {
+    color: #4070f4;
+   }
+  
+   footer {
+    font-family: "Inter", sans-serif;
+    width: 100%;
+    margin-bottom: 0;
+    margin-top: 13.9%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #F4D58D;
+    border-top: 5px solid #8D0801 ;
+  }
+  
+  
+  
+  footer ul {
+   list-style: none;
+   margin-right: 3%;
+    
+  }
+  .footer-content {
+    text-align: center;
+  
+  }
+  .footer-content p{ 
+    text-align: center;
+    font-style: italic;
+
+    font-weight: bold;
+  }
+  .footer li a {
+        
+    text-align: center;
+    text-decoration: none;
+    color: #001427;
+  }
+  
