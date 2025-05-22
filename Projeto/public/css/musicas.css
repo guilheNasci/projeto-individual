@@ -9,7 +9,7 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(244, 213, 141, 1) 89%, rgba(244, 213, 141, 1) 40%);
-    height: 1400px;
+    height: 1000px;
 
     background-repeat: no-repeat;
 }
@@ -92,7 +92,11 @@ body {
 
 .containerAlbum {
     display: flex;
+    border: #8D0801 solid 2px;
+
     padding: 40px;
+    align-self: center;
+    justify-content: center;
     background-color: #F4D58D;
     width: 25%;
     border-radius: 11px;
@@ -100,6 +104,8 @@ body {
 }
 
 .mainContainer {
+    justify-content: center;
+    align-self: center;
     display: flex;
     width: 100%;
     display: flex;
@@ -133,6 +139,13 @@ body {
     width: 100%;
     display: flex;
     flex-direction: row;
+}
+
+.nomeBanda{
+
+}
+.nomeAlbum{
+    
 }
 
 .row2 {
@@ -183,9 +196,8 @@ body {
 }
 
 .adcAlbum {
-    text-align: center;
-
-    display: flex;
+    text-align: center; /* Centraliza o texto horizontalmente */
+    width: 67%; /* Garante que o elemento ocupe toda a largura disponível */
 }
 
 
@@ -241,3 +253,42 @@ body {
 .optionsGen {}
 
 .lancamento {}
+
+
+footer {
+    margin-top: 5%;
+    font-family: "Inter", sans-serif;
+    width: 100%;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #F4D58D;
+    border-top: 5px solid #8D0801 ;
+  }
+  
+  footer img{
+   align-self: center;
+    width: 10%;
+  }
+  
+  footer ul {
+   list-style: none;
+    
+  }
+  .footer-content {
+    text-align: center;
+  
+  }
+  .footer-content p{
+    text-align: center;
+    margin-left: 0px;
+    font-weight: bold;
+  }
+  .footer li a {
+    font-style: italic;
+    text-align: center;
+    text-decoration: none;
+    color: #001427;
+    margin-right: 50px;
+  }
+  
