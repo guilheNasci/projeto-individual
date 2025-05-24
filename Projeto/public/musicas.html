@@ -19,7 +19,7 @@
     <div class="container">
       <ul class="navbar">
         <li><a href="simulador.html">Dashboard</a></li>
-        <li><a href="sobrenos.html">Músicas</a></li>
+        <li><a href="musicas.html">Músicas</a></li>
         <li><a href="login.html">Filmes</a></li>
         <li><a href="cadastro.html">Sobre</a></li>
         <li><a href="perfil.html">Perfil</a></li>
@@ -38,11 +38,11 @@
         <div class="row1">
           <div class="nomeBanda">
             <p>Nome do artista/banda</p>
-            <input type="text" id="nomeBanda" placeholder="The Beatles">
+            <input type="text" id="nome_banda" placeholder="The Beatles">
           </div>
           <div class="nomeAlbum">
             <p>Nome do albúm</p>
-            <input type="text" id="nomeAlbum" placeholder="Abbey Road">
+            <input type="text" id="nome_album" placeholder="Abbey Road">
           </div>
         </div>
         <div class="row2">
@@ -115,20 +115,21 @@
 
             </select>
           </div>
-          <div class="lancamento">
+            <div class="lancamento">
             <p>Ano</p>
-            <input type="number" id="lancamento" maxlength="4" placeholder="1969">
+            <input type="number" id="ano_lancamento" placeholder="1969" 
+                 oninput="this.value = this.value.slice(0, 4);" />
+            </div>
           </div>
-        </div>
-        <div class="row3">
-          <div class="nota">
+          <div class="row3">
+            <div class="nota">
             <p>Nota: </p>
-            <input type="text" id="checkboxNota" placeholder="0/10"
-                   oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 2);" />
-          </div>
+            <input type="text" id="nota" placeholder="0/10"
+                 oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 2);" />
+            </div>
           <div class="jaEscutei">
             <p>Já escutei:</p>
-            <input type="checkbox" id="escuteiCheck" style="zoom: 1.2;">
+            <input type="checkbox" id="ja_escutei" style="zoom: 1.2;">
           </div>
         </div>
         <div class="row4">
@@ -142,12 +143,11 @@
             <p>Adicionar capa do álbum:</p>
           </div>
           <div class="fileadd">
-            <input id="file-upload" type="file" />
+            <input id="capa_album" type="file" />
           </div>
         </div>
-        
         <br>
-        <button class="button" onclick="adicionarAlbum()">Adicionar</button>
+        <button class="button" onclick="adicionar()">Adicionar</button>
       </div>
     </div>
   </div>
@@ -165,4 +165,79 @@
         <li><a href="meuperfil.html">Perfil</a></li>
       </ul>
     </div>
-</footer>
+  </footer>
+</body>
+
+<script>
+
+  function adicionar() {
+
+    var nome_bandaVar = nome_banda.value;
+    var nome_albumVar = nome_album.value;
+    var generoVar = genero.value;
+    var anoLancamento = ano_lancamento.value;
+    var notaVar = nota.value;
+    var ja_escuteiVar = ja_escutei.checked ? 1 : 0; // Use .checked to determine if the checkbox is checked
+
+    console.log(ja_escuteiVar);
+    var reviewVar = review.value;
+
+    if (
+      nome_bandaVar == "" ||
+      nome_albumVar == "" ||
+      generoVar == "" ||
+      notaVar == "" ||
+      ja_escuteiVar == "" ||
+      reviewVar == "" 
+    ) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+      "(Mensagem de erro para todos os campos em branco)";
+
+      return false;
+    } 
+
+    fetch("/album/adicionar", {
+      
+      method: "POST",
+      headers: {
+      "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+      nome_banda: nome_bandaVar,
+      nome_album: nome_albumVar,
+      ano_lancamento: anoLancamento,
+      genero: generoVar,
+      nota: notaVar,
+      ja_escutei: ja_escuteiVar,
+      review: reviewVar
+      }),
+      
+    }).then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+
+          mensagem_erro.innerHTML =
+            "Album adicionado com sucesso! Redirecionando para tela de Perfil...";
+
+          setTimeout(() => {
+            window.location = "perfil.html";
+          }, "2000");
+
+          limparFormulario();
+
+        } else {
+          throw "Houve um erro ao tentar adicionar o  album!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+
+    return false;
+  }
+
+
+</script>

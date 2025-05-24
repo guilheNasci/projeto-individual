@@ -103,6 +103,30 @@ body {
     flex-direction: column;
 }
 
+.containerAlbum input {
+    border-radius: 5px;
+    border: #2A7B9B 2px solid;
+
+}
+
+.containerAlbum input[type=file]{
+    border: none;
+}
+
+.containerAlbum #ja_escutei{
+    border: #2A7B9B 2px solid;;
+}
+
+.containerAlbum select{
+    border-radius: 5px;
+    border: #2A7B9B 2px solid;
+}
+
+.containerAlbum textarea {
+    border-radius: 5px;
+    border: #2A7B9B 2px solid;
+}
+
 .mainContainer {
     justify-content: center;
     align-self: center;
