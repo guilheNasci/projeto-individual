@@ -105,7 +105,7 @@ body {
 
 .containerAlbum input {
     border-radius: 5px;
-    border: #2A7B9B 2px solid;
+    border: black 2px solid;
 
 }
 
@@ -114,17 +114,17 @@ body {
 }
 
 .containerAlbum #ja_escutei{
-    border: #2A7B9B 2px solid;;
+    border: black 2px solid;;
 }
 
 .containerAlbum select{
     border-radius: 5px;
-    border: #2A7B9B 2px solid;
+    border: black 2px solid;
 }
 
 .containerAlbum textarea {
     border-radius: 5px;
-    border: #2A7B9B 2px solid;
+    border: black 2px solid;
 }
 
 .mainContainer {
@@ -315,4 +315,48 @@ footer {
     color: #001427;
     margin-right: 50px;
   }
+.alerta_erro{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card_erro {
+  display: none;
+  background-color: #fff;
+  color: black;
+  width: 230px;
+  position: fixed;
+  border-radius: 4px;
+  border: #ED145B 3px solid;
+  padding: 10px;
+  margin-right: 10%;
+}
+
+.card_erro #mensagem_erro{
+  font-weight: 500;
+  font-size: 20px;
+}
+
+
+
+.alerta_erro{
+    display: flex;
+    justify-content: flex-end;
+  }
   
+  .card_erro {
+    display: none;
+    background-color: #fff;
+    color: black;
+    width: 230px;
+    position: fixed;
+    border-radius: 4px;
+    border: #ED145B 3px solid;
+    padding: 10px;
+    margin-right: 10%;
+  }
+  
+  .card_erro #mensagem_erro{
+    font-weight: 500;
+    font-size: 20px;
+  }

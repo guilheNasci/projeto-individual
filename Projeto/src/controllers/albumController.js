@@ -64,7 +64,7 @@ function adicionar(req, res) {
     }).catch(
         function(erro) {
             console.log(erro);
-            console.log("\n Houve um erro aí"
+            console.log("\n Houve um erro aí"           
             , erro.sqlMessage
             );
             res.status(500).json(erro.sqlMessage)

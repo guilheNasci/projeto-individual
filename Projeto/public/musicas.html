@@ -20,20 +20,23 @@
       <ul class="navbar">
         <li><a href="simulador.html">Dashboard</a></li>
         <li><a href="musicas.html">Músicas</a></li>
-        <li><a href="login.html">Filmes</a></li>
-        <li><a href="cadastro.html">Sobre</a></li>
-        <li><a href="perfil.html">Perfil</a></li>
+        <li><a href="sobremim.html">Sobre</a></li>
+        <li><a href="cadastro.html">Cadastrar</a></li>
+        <li><a href="login.html">Perfil</a></li>
       </ul>
     </div>
   </header>
 
   <div class="adicionarAlbum">
+    <div class="alerta_erro">
+      <div class="card_erro" id="cardErro">
+        <span id="mensagem_erro"></span>
+      </div>
+    </div>
     <div class="mainContainer">
       <div class="containerAlbum">
         <div class="title">
           <h1>Adicionar álbum</h1>
-      
-
         </div>
         <div class="row1">
           <div class="nomeBanda">
@@ -115,18 +118,18 @@
 
             </select>
           </div>
-            <div class="lancamento">
+          <div class="lancamento">
             <p>Ano</p>
-            <input type="number" id="ano_lancamento" placeholder="1969" 
-                 oninput="this.value = this.value.slice(0, 4);" />
-            </div>
+            <input type="number" id="ano_lancamento" placeholder="1969"
+              oninput="this.value = this.value.slice(0, 4);" />
           </div>
-          <div class="row3">
-            <div class="nota">
+        </div>
+        <div class="row3">
+          <div class="nota">
             <p>Nota: </p>
             <input type="text" id="nota" placeholder="0/10"
-                 oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 2);" />
-            </div>
+              oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 2);" />
+          </div>
           <div class="jaEscutei">
             <p>Já escutei:</p>
             <input type="checkbox" id="ja_escutei" style="zoom: 1.2;">
@@ -188,50 +191,50 @@
       generoVar == "" ||
       notaVar == "" ||
       ja_escuteiVar == "" ||
-      reviewVar == "" 
+      reviewVar == ""
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
-      "(Mensagem de erro para todos os campos em branco)";
+        "(Mensagem de erro para todos os campos em branco)";
 
       return false;
-    } 
+    }
 
     fetch("/album/adicionar", {
-      
+
       method: "POST",
       headers: {
-      "Content-Type": "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-      nome_banda: nome_bandaVar,
-      nome_album: nome_albumVar,
-      ano_lancamento: anoLancamento,
-      genero: generoVar,
-      nota: notaVar,
-      ja_escutei: ja_escuteiVar,
-      review: reviewVar
+        nome_banda: nome_bandaVar,
+        nome_album: nome_albumVar,
+        ano_lancamento: anoLancamento,
+        genero: generoVar,
+        nota: notaVar,
+        ja_escutei: ja_escuteiVar,
+        review: reviewVar
       }),
-      
+
     }).then(function (resposta) {
-        console.log("resposta: ", resposta);
+      console.log("resposta: ", resposta);
 
-        if (resposta.ok) {
-          cardErro.style.display = "block";
+      if (resposta.ok) {
+        cardErro.style.display = "block";
 
-          mensagem_erro.innerHTML =
-            "Album adicionado com sucesso! Redirecionando para tela de Perfil...";
+        mensagem_erro.innerHTML =
+          "Album adicionado com sucesso! Redirecionando para tela de Perfil...";
 
-          setTimeout(() => {
-            window.location = "perfil.html";
-          }, "2000");
+        setTimeout(() => {
+          window.location = "perfil.html";
+        }, "2000");
 
-          limparFormulario();
+        limparFormulario();
 
-        } else {
-          throw "Houve um erro ao tentar adicionar o  album!";
-        }
-      })
+      } else {
+        throw "Houve um erro ao tentar adicionar o  album!";
+      }
+    })
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
       });

@@ -20,21 +20,72 @@
             <ul class="navbar">
                 <li><a href="simulador.html">Dashboard</a></li>
                 <li><a href="musicas.html">Músicas</a></li>
-                <li><a href="filmes.html">Filmes</a></li>
                 <li><a href="sobremim.html">Sobre</a></li>
+                <li><a href="cadastro.html">Cadastrar</a></li>
                 <li><a href="login.html">Perfil</a></li>
             </ul>
         </div>
     </header>
 
-    <div>
-        
-    </div>
-
-
-
-
+    <div class="perfil-container">
+        <h1>Meus Álbuns</h1>
+        <div id="albuns-container" class="albuns-container">
+            <!-- Os álbuns serão carregados aqui dinamicamente -->
+        </div>
+    </div>  
 
 </body>
 
+<script>
+   
+    carregarAlbuns();
+   
+
+    function carregarAlbuns() {
+        fetch("/album/listar", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then((resposta) => {
+                if (resposta.ok) {
+                    return resposta.json(); // Converte a resposta para JSON
+                } else if (resposta.status === 204) {
+                    // Caso não haja álbuns
+                    const container = document.getElementById("albuns-container");
+                    container.innerHTML = "<p>Nenhum álbum encontrado!</p>";
+                    return [];
+                } else {
+                    throw new Error("Erro ao buscar álbuns.");
+                }
+            })
+            .then((albuns) => {
+                const container = document.getElementById("albuns-container");
+                container.innerHTML = ""; // Limpa o container antes de adicionar os álbuns
+
+                albuns.forEach((album) => {
+                    const albumCard = document.createElement("div");
+                    albumCard.classList.add("album-card");
+
+                    albumCard.innerHTML = `
+                        <h3>${album.nome_album}</h3>
+                        <p><strong>Banda/Artista:</strong> ${album.nome_banda}</p>
+                        <p><strong>Gênero:</strong> ${album.genero}</p>
+                        <p><strong>Ano de Lançamento:</strong> ${album.ano_lancamento}</p>
+                        <p><strong>Nota:</strong> ${album.nota}/10</p>
+                        <p><strong>Já escutou:</strong> ${album.ja_escutei ? "Sim" : "Não"}</p>
+                        <p><strong>Review:</strong> ${album.review}</p>
+                    `;
+
+                    container.appendChild(albumCard);
+                });
+            })
+            .catch((erro) => {
+                console.error("Erro ao carregar os álbuns:", erro);
+                const container = document.getElementById("albuns-container");
+                container.innerHTML = "<p>Erro ao carregar os álbuns.</p>";
+            });
+    }
+</script>
 </html>
