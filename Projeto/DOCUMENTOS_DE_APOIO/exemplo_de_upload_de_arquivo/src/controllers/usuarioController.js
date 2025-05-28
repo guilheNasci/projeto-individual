@@ -7,7 +7,7 @@ function salvar(req, res) {
   const {nome, email} = req.body
 
   const usuario = { nome, email, imagem }
-  
+  console.log("tudo: ", imagem)
   usuarioModel.salvar(usuario)
   .then(resultado => {
     res.status(201).send("Usuario criado com sucesso");

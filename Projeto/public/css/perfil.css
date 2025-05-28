@@ -4,116 +4,141 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Slab:wght@100..900&display=swap');
 
 
-html, body {
-    margin: 0;
-    padding: 0;
+html,
+body {
+  margin: 0;
+  padding: 0;
   background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(244, 213, 141, 1) 89%, rgba(244, 213, 141, 1) 40%);
-    height: 1400px;
-    
-    background-repeat: no-repeat;
-  }
-  
-  .header {
-    background-color: #F4D58D;
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    
-  }
-  
-  .container {
-    width: 100%;
-    align-self: center;
-    display: flex;
-  }
-  
-  
-  .navbar {
-    list-style: none;
-    display: flex;
-    gap: 20%;
-    margin-left: 20%;
-    align-items: center;
-    
-    
-  }
-  
-  .navbar li a {
-    display: flex;
-    text-decoration: none;
-    color: #001427;
-    font-family: "Roboto Slab", serif;
-  }
-  
-  .logo{
-    display: flex;
-    width: 30%;
-    align-self:flex-start;
-    margin-right: 50%;
-  }
-  
-  .header .logo  img{
-    display: flex;
-    align-self: center;
-    align-items: center;
-    max-width: 230px;
-    display: flex;
-  }
-  .header .logo2 {
-    font-family: "Roboto Slab", serif;
-    font-size: 40px;
-    display: flex;
-    align-self: center;
-    align-items: center;
-    position: absolute;
-    letter-spacing: 4px;
-    color: #8D0801;
-    color: inherit;
-  }
-  
-  .header .logo2 a {
-    text-decoration: none;
-    color: #8D0801;
-  }
-  
-  .perfil-container {
-    padding: 20px;
-    text-align: center;
+  height: 1400px;
+
+  background-repeat: no-repeat;
+}
+
+.header {
+  background-color: #F4D58D;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.container {
+  width: 100%;
+  align-self: center;
+  display: flex;
+}
+
+
+.navbar {
+  list-style: none;
+  display: flex;
+  gap: 20%;
+  margin-left: 15%;
+  align-items: center;
+
+
+}
+
+.navbar li a {
+  display: flex;
+  text-decoration: none;
+  color: #001427;
+  font-family: "Roboto Slab", serif;
+}
+
+.logo {
+  display: flex;
+  width: 30%;
+  align-self: flex-start;
+  margin-right: 50%;
+}
+
+.header .logo img {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  max-width: 230px;
+  display: flex;
+}
+
+.header .logo2 {
+  font-family: "Roboto Slab", serif;
+  font-size: 40px;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  position: absolute;
+  letter-spacing: 4px;
+  color: #8D0801;
+  color: inherit;
+}
+
+.header .logo2 a {
+  text-decoration: none;
+  color: #8D0801;
+}
+
+.perfil-container {
+  padding: 20px;
+  text-align: center;
 }
 
 .albuns-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 .album-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 15px;
-    width: 300px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 35px;
+  width: 350px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  background-color: #f9f9f9;
 }
 
 .album-card h3 {
-    margin: 0 0 10px;
-    font-size: 1.2em;
+  text-align: center;
+  margin: 0 0 30px;
+  font-size: 1.2em;
 }
 
 .album-card p {
-    margin: 5px 0;
-    font-size: 0.9em;
+  margin: 5px 0;
+  font-size: 0.9em;
 }
 
 .album-card p strong {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .album-card .nota {
-    font-weight: bold;
-    color: #007BFF;
+  font-weight: bold;
+  color: #007BFF;
 }
+
+.rows{
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.row1{
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.row2{
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+

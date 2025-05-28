@@ -9,6 +9,23 @@ function listar(req, res) {
     })
 }
 
+function listarPorUsuario(req, res) {
+    var idUsuario = req.params.idUsuario;
+    albumModel.listarPorUsuario(idUsuario)
+        .then(function(resultado){
+            res.status(200).json(resultado);
+        }).catch(function(erro){
+            res.status(500).json(erro.sqlMessage);
+        });
+}
+
+module.exports = {
+    adicionar,
+    listar,
+    listarPorUsuario
+};
+
+
 function adicionar(req, res) {
     var nome_banda = req.body.nome_banda;
     var nome_album = req.body.nome_album;
@@ -17,6 +34,8 @@ function adicionar(req, res) {
     var nota = req.body.nota;
     var ja_escutei = req.body.ja_escutei;
     var review = req.body.review;
+    var capa_album = req.file.filename;
+    var fk_idUsuario = req.body.fk_idUsuario; 
 
     console.log("Entrei em adicionar");
     console.log("nome_banda:", nome_banda);
@@ -26,6 +45,8 @@ function adicionar(req, res) {
     console.log("nota:", nota);
     console.log("ja_escutei:", ja_escutei);
     console.log("review:", review);
+    console.log("capa album: ", capa_album)
+    console.log("fk_usuario:", fk_idUsuario)
 
     if (nome_banda == undefined) {
         res.status(400).send("Nome da banda está undefined!");
@@ -55,8 +76,15 @@ function adicionar(req, res) {
         res.status(400).send("Review está undefined!");
         return;
     }
+    if (capa_album == undefined){
+        res.status(400).send("Capa album está undefined!")
+    }
+    if (fk_idUsuario == undefined) {
+        res.status(400).send("fk_idUsuario está undefined!");
+        return;
+    }
 
-    albumModel.adicionar(nome_banda, nome_album, genero, ano_lancamento, nota, ja_escutei, review)
+    albumModel.adicionar(nome_banda, nome_album, genero, ano_lancamento, nota, ja_escutei, review, capa_album, fk_idUsuario)
     .then(
         function(resposta){
         console.log(resposta)
@@ -74,5 +102,6 @@ function adicionar(req, res) {
 
 module.exports = {
     listar,
-    adicionar
+    adicionar,
+    listarPorUsuario
 }

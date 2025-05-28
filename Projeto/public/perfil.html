@@ -17,7 +17,7 @@
             <a href="index.html">review.it</a>
         </div>
         <div class="container">
-            <ul class="navbar">
+            <ul id="navbar" class="navbar">
                 <li><a href="simulador.html">Dashboard</a></li>
                 <li><a href="musicas.html">Músicas</a></li>
                 <li><a href="sobremim.html">Sobre</a></li>
@@ -42,7 +42,9 @@
    
 
     function carregarAlbuns() {
-        fetch("/album/listar", {
+        const idUsuario = sessionStorage.ID_USUARIO;
+        console.log("Id do usuario", idUsuario)
+        fetch(`/album/listarPorUsuario/${idUsuario}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -70,12 +72,18 @@
 
                     albumCard.innerHTML = `
                         <h3>${album.nome_album}</h3>
-                        <p><strong>Banda/Artista:</strong> ${album.nome_banda}</p>
-                        <p><strong>Gênero:</strong> ${album.genero}</p>
-                        <p><strong>Ano de Lançamento:</strong> ${album.ano_lancamento}</p>
-                        <p><strong>Nota:</strong> ${album.nota}/10</p>
-                        <p><strong>Já escutou:</strong> ${album.ja_escutei ? "Sim" : "Não"}</p>
-                        <p><strong>Review:</strong> ${album.review}</p>
+                        <div class="rows">
+                            <div class="row1">
+                                <p><strong>Banda/Artista:</strong> ${album.nome_banda}</p>
+                                <p><strong>Ano de Lançamento:</strong> ${album.ano_lancamento}</p>
+                                <p><strong>Já escutou:</strong> ${album.ja_escutei ? "Sim" : "Não"}</p>
+                            </div>
+                            <div class="row2">
+                                <p><strong>Gênero:</strong> ${album.genero}</p>
+                                <p><strong>Nota:</strong> ${album.nota}/10</p>
+                                <p><strong>Review:</strong> ${album.review}</p>
+                            </div>
+                        </div>
                     `;
 
                     container.appendChild(albumCard);
@@ -87,5 +95,7 @@
                 container.innerHTML = "<p>Erro ao carregar os álbuns.</p>";
             });
     }
-</script>
+
+
+    </script>
 </html>

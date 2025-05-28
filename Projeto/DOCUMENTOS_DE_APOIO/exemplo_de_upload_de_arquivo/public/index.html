@@ -29,6 +29,7 @@
     formData.append('nome', nome.value)
     formData.append('email', email.value)
 
+    console.log("tudo: ", formData)
     fetch("/usuarios/cadastro", {
       method: "POST",
       body: formData

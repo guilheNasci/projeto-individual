@@ -21,6 +21,4 @@ const storage = multer.diskStorage({
   }
 });
 
-
-console.log("tudo: ", formData)
 module.exports = multer({ storage });
