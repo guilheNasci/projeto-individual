@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./css/musicas.css" />
+  <link rel="icon" type="image/x-icon" href="assets/imgs/Adobe Express - file.png">
+
   <title>Músicas</title>
 </head>
 
@@ -18,11 +20,11 @@
     </div>
     <div class="container">
       <ul class="navbar">
-        <li><a href="simulador.html">Dashboard</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
         <li><a href="musicas.html">Músicas</a></li>
         <li><a href="sobremim.html">Sobre</a></li>
         <li><a href="cadastro.html">Cadastrar</a></li>
-        <li><a href="login.html">Perfil</a></li>
+         <li><a href="perfil.html">Perfil</a></li>
       </ul>
     </div>
   </header>
@@ -132,7 +134,7 @@
           </div>
           <div class="jaEscutei">
             <p>Já escutei:</p>
-            <input type="checkbox" id="ja_escutei" style="zoom: 1.2;">
+            <input type="checkbox" id="ja_escutei" style="zoom: 1.5;">
           </div>
         </div>
         <div class="row4">
@@ -161,7 +163,7 @@
 
       <p>&copy; 2025 review.it — Todos os direitos reservados.</p>
       <ul class="footer-links">
-        <li><a href="simulador.html">Dashboard</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
         <li><a href="musicas.html">Músicas</a></li>
         <li><a href="filmes.html">Filmes</a></li>
         <li><a href="sobremim.html">Sobre</a></li>
@@ -172,79 +174,66 @@
 </body>
 
 <script>
+  if (!sessionStorage.ID_USUARIO) {
+    window.location.href = "login.html"; // ajuste o nome da sua página de login se necessário
+}
 
-  function adicionar() {
+function adicionar() {
+  var nome_bandaVar = nome_banda.value;
+  var nome_albumVar = nome_album.value;
+  var generoVar = genero.value;
+  var anoLancamento = ano_lancamento.value;
+  var notaVar = nota.value;
+  var ja_escuteiVar = ja_escutei.checked ? 1 : 0;
+  var reviewVar = review.value;
+  var capaAlbumFile = capa_album.files[0];
 
-    
-
-    var nome_bandaVar = nome_banda.value;
-    var nome_albumVar = nome_album.value;
-    var generoVar = genero.value;
-    var anoLancamento = ano_lancamento.value;
-    var notaVar = nota.value;
-    var ja_escuteiVar = ja_escutei.checked ? 1 : 0;
-    var reviewVar = review.value;
-    var capaAlbumVar = capa_album.value;
-    
-
-    if (
-      nome_bandaVar == "" ||
-      nome_albumVar == "" ||
-      generoVar == "" ||
-      notaVar == "" ||
-      ja_escuteiVar == "" ||
-      reviewVar == ""
-    ) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
-
-      return false;
-    }
-
-    fetch("/album/adicionar", {
-
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        nome_banda: nome_bandaVar,
-        nome_album: nome_albumVar,
-        ano_lancamento: anoLancamento,
-        genero: generoVar,
-        nota: notaVar,
-        ja_escutei: ja_escuteiVar,
-        review: reviewVar,
-        capa_album: capaAlbumVar,
-        fk_idUsuario: sessionStorage.ID_USUARIO
-      }),
-
-    }).then(function (resposta) {
-      console.log("resposta: ", resposta);
-
-      if (resposta.ok) {
-        cardErro.style.display = "block";
-
-        mensagem_erro.innerHTML =
-          "Album adicionado com sucesso! Redirecionando para tela de Perfil...";
-
-        setTimeout(() => {
-          window.location = "perfil.html";
-        }, "2000");
-
-        limparFormulario();
-
-      } else {
-        throw "Houve um erro ao tentar adicionar o  album!";
-      }
-    })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-      });
-
+  if (
+    nome_bandaVar == "" ||
+    nome_albumVar == "" ||
+    generoVar == "" ||
+    notaVar == "" ||
+    reviewVar == "" ||
+    !capaAlbumFile
+  ) {
+    cardErro.style.display = "block";
+    mensagem_erro.innerHTML =
+      "(Mensagem de erro para todos os campos em branco)";
     return false;
   }
 
+  const formData = new FormData();
+  formData.append('nome_banda', nome_bandaVar);
+  formData.append('nome_album', nome_albumVar);
+  formData.append('ano_lancamento', anoLancamento);
+  formData.append('genero', generoVar);
+  formData.append('nota', notaVar);
+  formData.append('ja_escutei', ja_escuteiVar);
+  formData.append('review', reviewVar);
+  formData.append('capa_album', capaAlbumFile); // arquivo!
+  formData.append('fk_idUsuario', sessionStorage.ID_USUARIO);
+
+  fetch("/album/adicionar", {
+    method: "POST",
+    body: formData // não precisa de headers!
+  }).then(function (resposta) {
+    if (resposta.ok) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "Album adicionado com sucesso! Redirecionando para tela de Perfil...";
+      setTimeout(() => {
+        window.location = "perfil.html";
+      }, 2000);
+      limparFormulario();
+    } else {
+      throw "Houve um erro ao tentar adicionar o album!";
+    }
+  })
+    .catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+    });
+
+  return false;
+}
 
 </script>

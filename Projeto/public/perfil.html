@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
     <link rel="stylesheet" href="css/perfil.css">
+    <link rel="icon" type="image/x-icon" href="assets/imgs/Adobe Express - file.png">
+
 </head>
 
 <body>
@@ -18,11 +20,11 @@
         </div>
         <div class="container">
             <ul id="navbar" class="navbar">
-                <li><a href="simulador.html">Dashboard</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
                 <li><a href="musicas.html">Músicas</a></li>
                 <li><a href="sobremim.html">Sobre</a></li>
                 <li><a href="cadastro.html">Cadastrar</a></li>
-                <li><a href="login.html">Perfil</a></li>
+                 <li><a href="perfil.html">Perfil</a></li>
             </ul>
         </div>
     </header>
@@ -32,14 +34,17 @@
         <div id="albuns-container" class="albuns-container">
             <!-- Os álbuns serão carregados aqui dinamicamente -->
         </div>
-    </div>  
+    </div>
 
 </body>
 
 <script>
-   
+    if (!sessionStorage.ID_USUARIO) {
+    window.location.href = "login.html"; // ajuste o nome da sua página de login se necessário
+}
+
     carregarAlbuns();
-   
+
 
     function carregarAlbuns() {
         const idUsuario = sessionStorage.ID_USUARIO;
@@ -71,20 +76,23 @@
                     albumCard.classList.add("album-card");
 
                     albumCard.innerHTML = `
-                        <h3>${album.nome_album}</h3>
+                        <h3><i>${album.nome_banda} - ${album.nome_album}</i></h3>
+                        <img src="assets/${album.capa_album}" alt="Capa do álbum" style="width:350px;   height:300px;">
                         <div class="rows">
                             <div class="row1">
-                                <p><strong>Banda/Artista:</strong> ${album.nome_banda}</p>
                                 <p><strong>Ano de Lançamento:</strong> ${album.ano_lancamento}</p>
                                 <p><strong>Já escutou:</strong> ${album.ja_escutei ? "Sim" : "Não"}</p>
                             </div>
                             <div class="row2">
                                 <p><strong>Gênero:</strong> ${album.genero}</p>
                                 <p><strong>Nota:</strong> ${album.nota}/10</p>
-                                <p><strong>Review:</strong> ${album.review}</p>
                             </div>
+                       
                         </div>
-                    `;
+                        <div class="row3"> 
+                            <p><strong>Review:</strong> ${album.review}</p>
+                        </div> 
+                                           `;
 
                     container.appendChild(albumCard);
                 });
@@ -97,5 +105,6 @@
     }
 
 
-    </script>
+</script>
+
 </html>

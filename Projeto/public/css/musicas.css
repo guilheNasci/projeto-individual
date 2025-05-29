@@ -106,6 +106,7 @@ body {
 .containerAlbum input {
     border-radius: 5px;
     border: black 2px solid;
+    height: 25px;
 
 }
 
@@ -144,7 +145,7 @@ body {
 ::file-selector-button {
     display: flex;
     border: 2px solid black;
-    padding: 5px 10px;
+    padding: 5px 10px 5px;
     border-radius: 5px;
     background-color: #8D0801;
     color: #F4D58D;
