@@ -156,6 +156,14 @@
       </div>
     </div>
   </div>
+     <div class="perfil-container">
+        <h1>Reviews de todos usuários</h1>
+        <hr>
+        <div id="albuns-container" class="albuns-container">
+            <!-- Os álbuns serão carregados aqui dinamicamente -->
+        </div>
+    </div>
+
 
 
   <footer class="footer">
@@ -177,6 +185,70 @@
   if (!sessionStorage.ID_USUARIO) {
     window.location.href = "login.html"; // ajuste o nome da sua página de login se necessário
 }
+
+  listar()
+  
+
+ function listar() {
+        fetch(`/album/mostrar/`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then((resposta) => {
+                if (resposta.ok) {
+                    return resposta.json(); 
+                } else if (resposta.status === 204) {
+                    // Caso não haja álbuns
+                    const container = document.getElementById("albuns-container");
+                    container.innerHTML = "<p>Nenhum álbum encontrado!</p>";
+                    return [];
+                } else {
+                    throw new Error("Erro ao buscar álbuns.");
+                }
+            })
+            .then((albuns) => {
+                const container = document.getElementById("albuns-container");
+                container.innerHTML = ""; 
+                albuns.forEach((album) => {
+                    const albumCard = document.createElement("div");
+                    albumCard.classList.add("album-card");
+
+                    albumCard.innerHTML = `
+                    <div class="nome-usuario"> 
+                      <img src="assets/${album.imagem_perfil}">
+                      <p>${album.nome}</p>
+                    </div>
+                    <h3><i>${album.nome_banda} - ${album.nome_album}</i></h3>
+                        <img src="assets/${album.capa_album}" alt="Capa do álbum" style="width:350px;   height:350px;">
+                        <div class="rowws">
+                            <div class="roww1">
+                                <p><strong>Ano de Lançamento:</strong> ${album.ano_lancamento}</p>
+                                <p><strong>Já escutou:</strong> ${album.ja_escutei ? "Sim" : "Não"}</p>
+                            </div>
+                            <div class="roww2">
+                                <p><strong>Gênero:</strong> ${album.genero}</p>
+                                <p><strong>Nota:</strong> ${album.nota}/10</p>
+                            </div>
+                       
+                        </div>
+                        <div class="roww3"> 
+                            <p><strong>Review:</strong> ${album.review}</p>
+                        </div> 
+                                           `;
+
+                    container.appendChild(albumCard);
+                });
+            })
+            .catch((erro) => {
+                console.error("Erro ao carregar os álbuns:", erro);
+                const container = document.getElementById("albuns-container");
+                container.innerHTML = "<p>Erro ao carregar os álbuns.</p>";
+            });
+}
+
+
 
 function adicionar() {
   var nome_bandaVar = nome_banda.value;

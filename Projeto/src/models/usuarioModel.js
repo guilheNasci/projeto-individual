@@ -21,8 +21,20 @@ function cadastrar(nome, idade, email, senha) {
     return database.executar(instrucaoSql);
 }
 
+function mostrar(nome, idade, email, senha){
+    console.log("entrei no mostrar")
+
+    var instrucaoSql = `
+        SELECT * FROM usuario WHERE idUsuario = ${idUsuario}
+    `
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+
+}   
+
 
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    mostrar
 };

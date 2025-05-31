@@ -3,8 +3,13 @@ var database = require("../database/config")
 
 function listar() {
     var instrucao = `
-        SELECT * FROM album;
-    
+        SELECT usuario.nome, usuario.imagem_perfil, album.*
+        FROM 
+            album
+        JOIN 
+            usuario ON album.fk_idUsuario = usuario.idUsuario
+        WHERE 
+            album.capa_album IS NOT NULL;
     `;
     console.log("Executando a introdução SQL: \n" + instrucao);
     return database.executar(instrucao);

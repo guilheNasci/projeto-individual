@@ -89,6 +89,12 @@ body {
   color: #8D0801;
 }
 
+hr{
+  border: 1px solid #8D0801;
+  margin-bottom: 3%;
+  width: 60%;
+}
+
 .albuns-container {
   font-family: "Inter", sans-serif;
   display: flex;
@@ -155,3 +161,14 @@ body {
 .row2 {
   flex-direction: column;
 }
+
+
+.allAlbums {
+    margin-top: 5%;
+    background-color: #F4D58D;
+    width: 100%;
+    
+}
+
+
+

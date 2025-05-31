@@ -1,12 +1,17 @@
 var albumModel = require("../models/albumModel");
 
 function listar(req, res) {
-    albumModel.listar().then(function(resultado){
-        // precisamos informar que o resultado voltará para o front-end como uma resposta em json
-        res.status(200).json(resultado);
-    }).catch(function(erro){
-        res.status(500).json(erro.sqlMessage);
-    })
+    albumModel.listar()
+        .then(function(resultado){
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send(); // Nenhum álbum encontrado
+            }
+        })
+        .catch(function(erro){
+            res.status(500).json(erro.sqlMessage);
+        });
 }
 
 function listarPorUsuario(req, res) {
@@ -19,11 +24,7 @@ function listarPorUsuario(req, res) {
         });
 }
 
-module.exports = {
-    adicionar,
-    listar,
-    listarPorUsuario
-};
+
 
 
 function adicionar(req, res) {

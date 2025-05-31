@@ -105,7 +105,7 @@ body {
 
 .containerAlbum input {
     border-radius: 5px;
-    border: black 2px solid;
+    border: #001427 2.5px solid;
     height: 25px;
 
 }
@@ -119,13 +119,15 @@ body {
 }
 
 .containerAlbum select{
+    background-color: white;
+    height: 30px;
     border-radius: 5px;
-    border: black 2px solid;
+    border: black 3px solid;
 }
 
 .containerAlbum textarea {
     border-radius: 5px;
-    border: black 2px solid;
+    border: black 3px solid;
 }
 
 .mainContainer {
@@ -246,7 +248,7 @@ body {
 }
 
 .jaEscutei {
-    width: 39.5%;
+    width: 34.7%;
 }
 
 .jaEscutei input {
@@ -275,9 +277,107 @@ body {
 
 .nomeAlbum {}
 
-.optionsGen {}
+.optionsGen {} 
 
 .lancamento {}
+
+.perfil-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.perfil-container h1{
+  font-family: "Roboto Slab", sans-serif;
+  color: #8D0801;
+}
+
+hr{
+  border: 1px solid #8D0801;
+  margin-bottom: 3%;
+  width: 60%;
+}
+
+.albuns-container {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.album-card {
+  
+  border: 2px solid #2A7B9B;
+  border-radius: 8px;
+  padding: 35px;
+  width: 350px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  background-color: #f3eeee;
+}
+
+.album-card img{
+  border: 1px solid black;
+}
+
+.album-card h3 {
+  text-align: center;
+  margin: 0 0 30px;
+  font-size: 1.2em;
+}
+
+.album-card p {
+  margin: 5px 0;
+  font-size: 0.9em;
+}
+
+.album-card p strong {
+  font-weight: bold;
+}
+
+.album-card .nota {
+  font-weight: bold;
+}
+
+.rowws{
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.roww1{
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.roww2{
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.roww2 {
+  flex-direction: column;
+}
+
+
+.allAlbums {
+    margin-top: 5%;
+    background-color: #F4D58D;
+    width: 100%;
+    
+}
+
+.nome-usuario {
+    margin-bottom: 25px;
+    color: #8D0801;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "Roboto Slab", sans-serif;
+}
 
 
 footer {

@@ -29,12 +29,21 @@
         </div>
     </header>
 
+    <div class="perfil-informacoes">
+        
+
+    </div>
+
+
     <div class="perfil-container">
         <h1>Meus Álbuns</h1>
+        <hr>
         <div id="albuns-container" class="albuns-container">
             <!-- Os álbuns serão carregados aqui dinamicamente -->
         </div>
     </div>
+
+
 
 </body>
 
@@ -57,7 +66,7 @@
         })
             .then((resposta) => {
                 if (resposta.ok) {
-                    return resposta.json(); // Converte a resposta para JSON
+                    return resposta.json(); 
                 } else if (resposta.status === 204) {
                     // Caso não haja álbuns
                     const container = document.getElementById("albuns-container");
@@ -69,15 +78,14 @@
             })
             .then((albuns) => {
                 const container = document.getElementById("albuns-container");
-                container.innerHTML = ""; // Limpa o container antes de adicionar os álbuns
-
+                container.innerHTML = ""; 
                 albuns.forEach((album) => {
                     const albumCard = document.createElement("div");
                     albumCard.classList.add("album-card");
 
                     albumCard.innerHTML = `
                         <h3><i>${album.nome_banda} - ${album.nome_album}</i></h3>
-                        <img src="assets/${album.capa_album}" alt="Capa do álbum" style="width:350px;   height:300px;">
+                        <img src="assets/${album.capa_album}" alt="Capa do álbum" style="width:350px;   height:350px;">
                         <div class="rows">
                             <div class="row1">
                                 <p><strong>Ano de Lançamento:</strong> ${album.ano_lancamento}</p>
