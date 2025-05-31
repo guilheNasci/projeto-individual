@@ -22,7 +22,6 @@ function autenticar(req, res) {
 
 function mostrar(req, res) {
     usuarioModel.mostrar().then(function(resultado){
-        // precisamos informar que o resultado voltará para o front-end como uma resposta em json
         res.status(200).json(resultado);
     }).catch(function(erro){
         res.status(500).json(erro.sqlMessage);
@@ -31,7 +30,6 @@ function mostrar(req, res) {
 
 
 function cadastrar(req, res) {
-    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var nome = req.body.nomeServer;
     var idade = req.body.idadeServer;
     var email = req.body.emailServer;
@@ -49,7 +47,6 @@ function cadastrar(req, res) {
 
     } else {
 
-        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         usuarioModel.cadastrar(nome, idade,  email,  senha)
             .then(
                 function (resultado) {

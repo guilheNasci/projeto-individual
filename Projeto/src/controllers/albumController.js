@@ -25,7 +25,20 @@ function listarPorUsuario(req, res) {
 }
 
 
-
+function mostrarPerfil(req, res){
+    var idUsuario = req.params.idUsuario;
+    albumModel.mostrarPerfil(idUsuario)
+   .then(function(resultado){
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send(); // Nenhum álbum encontrado
+            }
+        })
+        .catch(function(erro){
+            res.status(500).json(erro.sqlMessage);
+        });
+}
 
 function adicionar(req, res) {
     var nome_banda = req.body.nome_banda;
@@ -104,5 +117,6 @@ function adicionar(req, res) {
 module.exports = {
     listar,
     adicionar,
-    listarPorUsuario
+    listarPorUsuario,
+    mostrarPerfil
 }

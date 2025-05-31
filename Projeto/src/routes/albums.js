@@ -15,4 +15,8 @@ router.get("/mostrar", function (req, res) {
     albumController.listar(req, res);
 });
 
+router.get("/mostrarPerfil/:idUsuario", function(req, res){
+    albumController.mostrarPerfil(req, res);
+})
+
 module.exports = router;

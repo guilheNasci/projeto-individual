@@ -1,350 +1,400 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Slab:wght@100..900&display=swap');
 
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto+Slab:wght@100..900&display=swap');
 
-html, body {
-    margin: 0;
-    padding: 0;
-    background: #2A7B9B;
-    background-image: url("/assets/imgs/wywh.jpg");
-   background-repeat: no-repeat;
-   background-size: 105%
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #2A7B9B;
+  background-image: url("/assets/imgs/wywh.jpg");
+  background-repeat: no-repeat;
+  background-size: 105%
+}
 
-  }
-  
-  .header {
-    background-color: #F4D58D;
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    /* border-bottom: solid #8D0801 3px; */
-    
-  }
-  
-  .container {
-    width: 100%;
-    align-self: center;
-    display: flex;
-  }
+.header {
+  background-color: #F4D58D;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  /* border-bottom: solid #8D0801 3px; */
 
-    .containerHeader {
-    width: 100%;
-    align-self: center;
-    display: flex;
-  }
+}
 
-  .backgroundimg {  
-    width: 100%;
-    padding-bottom: 100px;
-    padding-top: 100px;
-    background-size: 110%;
+.container {
+  width: 100%;
+  align-self: center;
+  display: flex;
+}
 
-  }
-  
-  
-  .navbar {
-    list-style: none;
-    display: flex;
-    gap: 20%;
-    margin-top: 1%;
-    margin-left: 15%;
-    align-items: center;
-    
-    
-  }
-  
-  .navbar li a {
-    display: flex;
-    text-decoration: none;
-    color: #001427;
-    font-family: "Roboto Slab", serif;
-  }
-  
-  .logo{
-    display: flex;
-    width: 30%;
-    align-self:flex-start;
-    margin-right: 50%;
-  }
-  
-  .header .logo  img{
-    display: flex;
-    align-self: center;
-    align-items: center;
-    max-width: 230px;
-    display: flex;
-  }
-  .header .logo2 {
-    font-family: "Roboto Slab", serif;
-    font-size: 40px;
-    display: flex;
-    align-self: center;
-    align-items: center;
-    position: absolute;
-    letter-spacing: 4px;
-    color: #8D0801;
-    color: inherit;
-  }
-  
-  .header .logo2 a {
-    text-decoration: none;
-    color: #8D0801;
-  }
-  
+.containerHeader {
+  width: 100%;
+  align-self: center;
+  display: flex;
+}
+
+.backgroundimg {
+  width: 100%;
+  padding-bottom: 100px;
+  padding-top: 100px;
+  background-size: 110%;
+
+}
 
 
-  .h2{
-    position: relative;
-    font-family: "Inter",sans-serif;
-    font-size: 23px;
-    font-weight: 700;
-    color: #8D0801;
-    box-sizing: border-box;
-
-  }
-  .cadastro {
-    box-sizing: border-box;
-
-    text-align: center;
-  }
-  .cadastro form{
-    box-sizing: border-box;
-    margin-top: 30px;
-  }
-  .cadastro form .input-box{
-    height: 52px;
-    margin: 18px 0;
-    box-sizing: border-box;
-
-  }
-  form .input-box input{
-    height: 100%;
-    width: 100%;
-    outline: none;
-    padding: 0 15px;
-    box-sizing: border-box;
-
-    font-size: 17px;
-    font-weight: 400;
-    color: #333;
-    border: 2px solid #8D0801;
-    border-bottom-width: 2.5px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-  }
-  .input-box input:focus,
-  .input-box input:valid{
-    border-color: #8D0801;
-  }
-  form .termos{
-    display: flex;
-    font-family: "Inter", sans-serif;
-    align-items: center;
-    box-sizing: border-box;
-
-  }
-  form h3{
-    color: #707070;
-    font-size: 14px;
-    font-weight: 500;
-    margin-left: 10px;
-    box-sizing: border-box;
-
-  }
-  .input-box.button input{
-    font-family: "Inter", sans-serif;
-    color: #fff;
-    letter-spacing: 1px;
-    box-sizing: border-box;
-
-    border: none;
-    background: #2A7B9B;
-    cursor: pointer;
-  }
-  .input-box.button input:hover{
-    background: #8D0801;
-  }
-  form .text h3{
-   color: #8D0801;
-   width: 100%;
-   text-align: center;
-   font-family: "Inter", sans-serif;
-  }
-  form .text h3 a{
-    color: #4070f4;
-    text-decoration: none;
-  }
-  form .text h3 a:hover{
-    text-decoration: underline;
-  }
-  
+.navbar {
+  list-style: none;
+  display: flex;
+  gap: 20%;
+  margin-top: 1%;
+  margin-left: 15%;
+  align-items: center;
 
 
-  footer {
-    font-family: "Inter", sans-serif;
-    width: 100%;
-    margin-bottom: 0;
-    margin-top: 9.8%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: #F4D58D;
-    border-top: 5px solid #8D0801 ;
-  }
-  
-  
-  
-  footer ul {
-   list-style: none;
-   margin-right: 3%;
-    
-  }
-  .footer-content {
-    text-align: center;
-  
-  }
-  .footer-content p{ 
-    text-align: center;
-    font-style: italic;
+}
 
-    font-weight: bold;
-  }
-  .footer li a {
-        
-    text-align: center;
-    text-decoration: none;
-    color: #001427;
-  }
-  
+.navbar li a {
+  display: flex;
+  text-decoration: none;
+  color: #001427;
+  font-family: "Roboto Slab", serif;
+}
 
- .container {
+.logo {
+  display: flex;
+  width: 30%;
+  align-self: flex-start;
+  margin-right: 50%;
+}
+
+.header .logo img {
+  display: flex;
+  align-self: center;
+  align-items: center;
+  max-width: 230px;
+  display: flex;
+}
+
+.header .logo2 {
+  font-family: "Roboto Slab", serif;
+  font-size: 40px;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  position: absolute;
+  letter-spacing: 4px;
+  color: #8D0801;
+  color: inherit;
+}
+
+.header .logo2 a {
+  text-decoration: none;
+  color: #8D0801;
+}
+
+/* Adicione ao seu arquivo CSS */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0;
+  border-radius: 6px;
+  padding: 0;
+}
+
+.dropdown-content li {
+  list-style: none;
+}
+
+.dropdown-content li a {
+  color: #001427;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 6px;
+}
+
+.dropdown-content li a:hover {
+  background-color: #f4d58d;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.h2 {
+  position: relative;
+  font-family: "Inter", sans-serif;
+  font-size: 23px;
+  font-weight: 700;
+  color: #8D0801;
+  box-sizing: border-box;
+
+}
+
+.cadastro {
+  box-sizing: border-box;
+
+  text-align: center;
+}
+
+.cadastro form {
+  box-sizing: border-box;
+  margin-top: 30px;
+}
+
+.cadastro form .input-box {
+  height: 52px;
+  margin: 18px 0;
+  box-sizing: border-box;
+
+}
+
+form .input-box input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding: 0 15px;
+  box-sizing: border-box;
+
+  font-size: 17px;
+  font-weight: 400;
+  color: #333;
+  border: 2px solid #8D0801;
+  border-bottom-width: 2.5px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.input-box input:focus,
+.input-box input:valid {
+  border-color: #8D0801;
+}
+
+form .termos {
+  display: flex;
+  font-family: "Inter", sans-serif;
+  align-items: center;
+  box-sizing: border-box;
+
+}
+
+form h3 {
+  color: #707070;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 10px;
+  box-sizing: border-box;
+
+}
+
+.input-box.button input {
+  font-family: "Inter", sans-serif;
+  color: #fff;
+  letter-spacing: 1px;
+  box-sizing: border-box;
+
+  border: none;
+  background: #2A7B9B;
+  cursor: pointer;
+}
+
+.input-box.button input:hover {
+  background: #8D0801;
+}
+
+form .text h3 {
+  color: #8D0801;
+  width: 100%;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+}
+
+form .text h3 a {
+  color: #4070f4;
+  text-decoration: none;
+}
+
+form .text h3 a:hover {
+  text-decoration: underline;
+}
+
+
+
+footer {
+  font-family: "Inter", sans-serif;
+  width: 100%;
+  margin-bottom: 0;
+  margin-top: 9.8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #F4D58D;
+  border-top: 5px solid #8D0801;
+}
+
+
+
+footer ul {
+  list-style: none;
+  margin-right: 3%;
+
+}
+
+.footer-content {
+  text-align: center;
+
+}
+
+.footer-content p {
+  text-align: center;
+  font-style: italic;
+
+  font-weight: bold;
+}
+
+.footer li a {
+
+  text-align: center;
+  text-decoration: none;
+  color: #001427;
+}
+
+
+.container {
   margin-top: 2%;
 }
-  
-
-  
-  .formulario {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  input {
-    margin-bottom: 10px;
-    border: 2px solid #32b9cd;
-    padding: 10px;
-    text-align: center;
-    border-radius: 10px;
-    font-family: "Inter", sans-serif;
-
-  }
-  
 
 
-  
-  
-  .login .container {
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-  }
-  
-  .card {
 
-    width: 30%;
-    background-color: #eccc7f;
-    border-radius: 20px;
-    display: flex;
-    border: solid 1.5px #8D0801;
-    align-items: center;
-    justify-content: space-evenly;
-    color: #8D0801;
-    flex-direction: column;
-    height: fit-content;
-    padding: 20px 0;
-  }
-  
-  .card h2 {
-    font-family: "Inter", sans-serif;
-    margin: 10px;
-    font-size: 25px;
-  }
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
 
-  .card_erro #mensagem_erro {
-    color: #8D0801;
-    text-align: center;
-    font-family: "Inter",sans-serif;
-    font-weight: bold;
-  }
-  
-  .formulario {
-    font-family: "Inter", sans-serif;
-    display: flex;
-    height: 20%;
-    width: 50%;
-    justify-content: space-around;
-    flex-direction: column;
-  }
-  
-  .formulario span {
-    font-size: 15px;
-    font-weight: 800;
-  }
-  
-  .formulario input {
-    border: 1.5px solid #8D0801;
-    text-align: center;
-    height: 6px;
-    border-radius: 10px;
-    margin: 0;
-  }
-  
-  .formulario select {
-    border: 2px solid #32b9cd;
-    background-color: white;
-    color: #eccc7f;
-    height: 36px;
-    text-align: center;
-    border-radius: 10px;
-    margin: 0;
-  }
-  
-  .campo {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    padding: 7px 0;
-  }
-  
-  .botao {
-    cursor: pointer;
-    font-family: "Roboto Slab", serif;
-    letter-spacing: 2px;
-    border: solid 3px #001427;
-    border-radius: 10px;
-    font-weight: 400;
-    font-size: 18px;
-    color: #F4D58D;
-    background-color: #8D0801;
-    width: 200px;
-    height: 40px;
-    align-self: center;
-    margin-top: 20px;
-  }
-  
+input {
+  margin-bottom: 10px;
+  border: 2px solid #32b9cd;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+  font-family: "Inter", sans-serif;
 
- .possui {
+}
+
+
+
+
+
+.login .container {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.card {
+
+  width: 30%;
+  background-color: #eccc7f;
+  border-radius: 20px;
+  display: flex;
+  border: solid 1.5px #8D0801;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #8D0801;
+  flex-direction: column;
+  height: fit-content;
+  padding: 20px 0;
+}
+
+.card h2 {
+  font-family: "Inter", sans-serif;
+  margin: 10px;
+  font-size: 25px;
+}
+
+.card_erro #mensagem_erro {
+  color: #8D0801;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+}
+
+.formulario {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  height: 20%;
+  width: 50%;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.formulario span {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.formulario input {
+  border: 1.5px solid #8D0801;
+  text-align: center;
+  height: 6px;
+  border-radius: 10px;
+  margin: 0;
+}
+
+.formulario select {
+  border: 2px solid #32b9cd;
+  background-color: white;
+  color: #eccc7f;
+  height: 36px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 0;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 7px 0;
+}
+
+.botao {
+  cursor: pointer;
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 2px;
+  border: solid 3px #001427;
+  border-radius: 10px;
+  font-weight: 400;
+  font-size: 18px;
+  color: #F4D58D;
+  background-color: #8D0801;
+  width: 200px;
+  height: 40px;
+  align-self: center;
+  margin-top: 20px;
+}
+
+
+.possui {
   font-family: "Inter", sans-serif;
   text-align: center;
- }
+}
 
- .possui a {
+.possui a {
   color: #4070f4;
- }
+}
 
- #div_erros_login {
+#div_erros_login {
   font-family: "Roboto Slab", sans-serif;
   color: #2A7B9B;
   display: none

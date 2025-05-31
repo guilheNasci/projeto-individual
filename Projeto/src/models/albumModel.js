@@ -9,11 +9,33 @@ function listar() {
         JOIN 
             usuario ON album.fk_idUsuario = usuario.idUsuario
         WHERE 
-            album.capa_album IS NOT NULL;
+            album.capa_album IS NOT NULL
+             ORDER BY album.id DESC;
     `;
     console.log("Executando a introdução SQL: \n" + instrucao);
     return database.executar(instrucao);
 
+}
+
+function mostrarPerfil(idUsuario){
+   var instrucao = `
+        SELECT 
+            usuario.nome, 
+            usuario.imagem_perfil, 
+            DATE_FORMAT(usuario.idade, '%d/%m/%Y') AS idade,
+            COUNT(album.review) AS quantidade_reviews,
+            ROUND(AVG(album.nota), 2) AS media_nota
+        FROM 
+            usuario
+        LEFT JOIN 
+            album ON album.fk_idUsuario = usuario.idUsuario
+        WHERE 
+            usuario.idUsuario = ${idUsuario}
+        GROUP BY 
+            usuario.idUsuario;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
 }
 
 
@@ -37,5 +59,6 @@ function listarPorUsuario(idUsuario) {
 module.exports = {
     adicionar,
     listar,
-    listarPorUsuario // adicione aqui
+    listarPorUsuario,
+    mostrarPerfil
 };
