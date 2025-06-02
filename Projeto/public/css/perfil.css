@@ -109,7 +109,7 @@ body {
 }
 
 .dropdown-content li a:hover {
-    background-color: #f4d58d;
+    background-color: #2A7B9B;
 }
 
 .dropdown:hover .dropdown-content {
@@ -121,6 +121,7 @@ body {
 
 }
 .perfil-box {
+    justify-content: center;
     display: flex;
     align-items: center;
     gap: 40px;

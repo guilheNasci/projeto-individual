@@ -108,7 +108,7 @@ background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 
 }
 
 .dropdown-content li a:hover {
-    background-color: #f4d58d;
+    background-color: #2A7B9B;
 }
 
 .dropdown:hover .dropdown-content {

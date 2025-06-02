@@ -86,7 +86,6 @@ html, body {
     color: #8D0801;
   }
 
-  /* Adicione ao seu arquivo CSS */
 .dropdown {
     position: relative;
 }
@@ -116,7 +115,7 @@ html, body {
 }
 
 .dropdown-content li a:hover {
-    background-color: #f4d58d;
+    background-color: #2A7B9B;
 }
 
 .dropdown:hover .dropdown-content {
