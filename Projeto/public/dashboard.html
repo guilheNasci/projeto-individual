@@ -17,7 +17,7 @@
             <img src="./assets/imgs/logo.png" alt="review.it">
         </div>
         <div class="logo2">
-            <a href="index.html">review.it</a>
+            <a href="index.html">dashboard</a>
         </div>
         <div class="containerHeader">
             <ul class="navbar">
@@ -37,14 +37,63 @@
     </header>
     <div class="mainCard">
         <hr>
-        <h1>Charts</h1>
+        <h1>Os mais críticos.</h1>
         <hr>
         <div class="graficos">
-            <div>
-
-            </div>
+           
         </div>
     </div>
 </body>
+<script>
 
-</html>
+    reviewsUsuarios()
+
+    function reviewsUsuarios(){
+        console.log("entrei na function")
+        fetch(`/usuarios/reviewsUsuarios`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then((resposta) => {
+                if (resposta.ok) {
+                    return resposta.json(); 
+                } else if (resposta.status === 204) {
+                    // Caso não haja álbuns
+                    const container = document.querySelector(".graficos");
+                    container.innerHTML = "<p>Erro!</p>";
+                    return [];
+                } else {
+                    throw new Error("Erro na API.");
+                }
+            }).then((reviews) => {
+                const container = document.querySelector(".graficos");
+                container.innerHTML = ""; 
+                if (reviews.length === 0) {
+                    container.innerHTML = "<p>Nenhum usuário com reviews encontrados.</p>";
+                    return;
+                }
+                reviews.forEach((usuario) => {
+                   const usuarioCard = document.createElement("div");
+                   usuarioCard.classList.add("usuario-card"); 
+
+                   usuarioCard.innerHTML = `
+                        <div class="nome-usuario"> 
+                            <img src="assets/${usuario.imagem_perfil}">
+                            <h1>${usuario.nome}</h1>
+                            <p>Total de reviews: <br> <label class"numero">${usuario.total_reviews}</label></p>
+                        </div>
+`                           ;
+
+                    container.appendChild(usuarioCard);
+                });
+            })
+            .catch((erro) => {
+                console.error("Erro ao carregar:", erro);
+                const container = document.querySelector(".graficos");
+                container.innerHTML = "<p>Erro ao carregar.</p>";
+            });
+}
+
+</script>

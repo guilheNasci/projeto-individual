@@ -33,8 +33,25 @@ function mostrar(nome, idade, email, senha){
 }   
 
 
+function reviewsUsuarios(){
+    console.log("entrei no reviewsUsuarios")
+    
+    var instrucaoSql = `
+        SELECT usuario.idUsuario, usuario.nome, usuario.email, usuario.imagem_perfil,
+        COUNT(album.review) AS total_reviews
+        FROM usuario
+        LEFT JOIN album ON album.fk_idUsuario = usuario.idUsuario
+        GROUP BY usuario.idUsuario
+        ORDER BY total_reviews DESC
+        LIMIT 5;
+    `
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     autenticar,
     cadastrar,
-    mostrar
+    mostrar,
+    reviewsUsuarios
 };
