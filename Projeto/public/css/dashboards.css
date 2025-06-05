@@ -9,8 +9,9 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(244, 213, 141, 1) 89%, rgba(244, 213, 141, 1) 40%);
-    height: 1000px;
-
+    height: 1500px;
+     -ms-overflow-style: none;  
+  scrollbar-width: none;
     background-repeat: no-repeat;
 }
 
@@ -78,7 +79,7 @@ body {
     color: #8D0801;
 }
 
-.containerHeader{
+.containerHeader {
     margin-right: 14%;
 }
 
@@ -91,7 +92,7 @@ body {
     position: absolute;
     background-color: #fff;
     min-width: 120px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     right: 0;
     border-radius: 6px;
@@ -120,10 +121,12 @@ body {
 
 
 .mainCard {
-    margin-top: 2%;
+    margin-top: 1%;
+    display: flex;
+    flex-direction: column;
 }
 
-.mainCard h1{
+.mainCard h1 {
     color: #2A7B9B;
     font-size: 50px;
     font-weight: bolder;
@@ -131,33 +134,44 @@ body {
     text-align: center;
 }
 
+.mainCard p{
+    font-size: 20px;
+}
+
 hr {
-    width: 15%;
-    border: #8D0801 solid 1px;
+    width: 25%;
+    border: #8D0801 solid 2px;
 }
 
 .graficos {
-    background-color: #2A7B9B;
+
+    border-radius: 50% 20% / 10% 40%;
+    padding: 30px 30px;
+    background: #2A7B9B;
+    background: linear-gradient(114deg, rgba(42, 123, 155, 1) 25%, rgba(141, 8, 1, 1) 100%);
+    border: #001427 2px solid;
+    width: 90%;
+    height: 300px;
     font-family: "Roboto", sans-serif;
     display: flex;
-    padding: 10px;
     justify-content: center;
     align-items: flex-start;
-    gap: 32px;
+    gap: 80px;
     flex-wrap: wrap;
-    margin: 40px 0;
 }
 
 .usuario-card {
     background-size: 100%;
     background-image: url("/assets/imgs/vinyl2.png");
-    border-radius: 16px;
+    border-radius: 50px;
     padding: 35px;
-    
+    justify-content: center;
+    align-self: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 130px;
+    width: 165px;
+    height: 165px;
 }
 
 
@@ -166,7 +180,7 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
+    gap: 10px;
 }
 
 .nome-usuario img {
@@ -181,10 +195,11 @@ hr {
 .nome-usuario p {
     margin: 0;
     text-align: center;
-    font-size: 10px;
+    font-size: 18px;
     color: #8D0801;
-    background-color: #F4D58D;
-    padding: 0.75px;
+    background: #ffffff;
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(244, 213, 141, 1) 100%);
+    padding: 0 10px;
     border-radius: 3px;
     font-weight: bold;
 }
@@ -192,16 +207,156 @@ hr {
 
 .nome-usuario h1 {
     margin: 0;
-    padding: 0.75px;
+    padding: 0 10px;
     font-size: 18px;
     color: #8D0801;
-    background-color: #F4D58D;
+    background: #ffffff;
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(244, 213, 141, 1) 100%);
     border-radius: 5px;
     font-weight: bold;
 }
 
-.nome-usuario label{
+.nome-usuario label {
+    font-size: 20px;
+    font-weight: bolder;
+    text-decoration: underline;
     color: #2A7B9B;
+}
+
+.mainGraficos {
+    display: flex;
+    justify-content: center;
+}
+
+.midGraficos {
+    margin-top: 50px;
+    justify-content: center;
+    gap: 150px;
+    display: flex;
+
+}
+.midGraficos hr{
+    width: 80%;
+    background-color: #8D0801;
+}
+
+.container1{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.container1 h1{
+    color: #2A7B9B;
+    font-size: 35px;
+    font-weight: bolder;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+}
+
+.graficos2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     background: #2A7B9B;
+    background: linear-gradient(114deg, rgba(42, 123, 155, 1) 25%, rgba(141, 8, 1, 1) 100%);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+    padding: 32px;
+    border: #001427 solid 2px;
+    margin: 30px auto;
+    width: 600px;
+}
+
+#graficoGenero {
+    background: #ffffff;
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 49%, rgba(244, 213, 141, 1) 100%);
+    border-radius: 12px;
+    border: #201e1a 1px solid;
+    padding: 16px;
+}
+
+
+.graficos3 {
+        display: flex;
+    justify-content: center;
+    align-items: center;
+     background: #2A7B9B;
+    background: linear-gradient(114deg, rgba(42, 123, 155, 1) 25%, rgba(141, 8, 1, 1) 100%);
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+    padding: 32px;
+    border: #001427 solid 2px;
+    margin: 30px auto;
+    width: 600px;
+}
+
+#graficoFaixaAnos{
+        background: #ffffff;
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 49%, rgba(244, 213, 141, 1) 100%);
+    border-radius: 12px;
+    border: #201e1a 1px solid;
+    padding: 16px;
+
+}
+.container2 {
+       text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.container2 h1{
+    color: #2A7B9B;
+    font-size: 35px;
+    font-weight: bolder;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+  font-family: "Inter", sans-serif;
+  width: 100%;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #F4D58D;
+  border-top: 5px solid #8D0801 ;
+}
+
+footer img{
+ align-self: center;
+  width: 10%;
+}
+
+footer ul {
+ list-style: none;
+  
+}
+.footer-content {
+  text-align: center;
+
+}
+.footer-content p{
+  text-align: center;
+  margin-left: 0px;
+  font-weight: bold;
+}
+.footer li a {
+  font-style: italic;
+  text-align: center;
+  text-decoration: none;
+  color: #001427;
+  margin-right: 50px;
 }
 /* .usuario-card p:last-child {
     color: #8D0801;

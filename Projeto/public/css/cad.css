@@ -10,7 +10,9 @@ body {
   background: #2A7B9B;
   background-image: url("/assets/imgs/wywh.jpg");
   background-repeat: no-repeat;
-  background-size: 105%
+  background-size: 105%;
+   -ms-overflow-style: none;  
+  scrollbar-width: none;
 }
 
 .header {
@@ -19,7 +21,7 @@ body {
   width: 100%;
   align-items: center;
   justify-content: center;
-  /* border-bottom: solid #8D0801 3px; */
+
 
 }
 
@@ -94,7 +96,6 @@ body {
   color: #8D0801;
 }
 
-/* Adicione ao seu arquivo CSS */
 .dropdown {
   position: relative;
 }
@@ -124,7 +125,7 @@ body {
 }
 
 .dropdown-content li a:hover {
-  background-color: #f4d58d;
+  background-color: #2A7B9B;
 }
 
 .dropdown:hover .dropdown-content {

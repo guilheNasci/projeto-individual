@@ -10,7 +10,8 @@ html, body {
   padding: 0;
 background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(244, 213, 141, 1) 89%, rgba(244, 213, 141, 1) 40%);
   height: 1400px;
-  
+ -ms-overflow-style: none;  
+  scrollbar-width: none;
   background-repeat: no-repeat;
 }
 
@@ -294,6 +295,7 @@ footer ul {
   background-image: url("/assets/imgs/Metallica-Wallpaper-HD-Free-download.jpg");
   background-size: 100%;
   padding-bottom: 125px;
+  justify-content: center;
   padding-top: 125px;
   border-bottom: solid #8D0801 3px;
   border-top: solid #8D0801 3px;
@@ -301,15 +303,17 @@ footer ul {
 
 .exemplo .exemploContainer {
   justify-content: center;
+  display: flex;
 }
 
 .exemplo .exemploContainer .imgs {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   gap: 300px;
-
-  margin-left: 32%;
+  
 
 }
 
@@ -321,7 +325,7 @@ footer ul {
 
 .img2 {
   margin-bottom: 100px;
-  width: 95%;
+  width: 100%;
 }
 
 .img h1{

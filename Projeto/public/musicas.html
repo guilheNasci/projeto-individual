@@ -21,7 +21,7 @@
     <div class="container">
       <ul class="navbar">
         <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="musicas.html">Músicas</a></li>
+        <li><a href="musicas.html">Álbums</a></li>
         <li><a href="sobremim.html">Sobre</a></li>
         <li><a href="cadastro.html">Cadastrar</a></li>
         <li class="dropdown">
@@ -71,6 +71,7 @@
               <option value="Eletrônica">Eletrônica</option>
               <option value="House">House</option>
               <option value="Techno">Techno</option>
+              <option value="Soundtrack">Soundtrack</option>
               <option value="Trap">Trap</option>
               <option value="Reggae">Reggae</option>
               <option value="Ska">Ska</option>
@@ -166,7 +167,6 @@
         <h1>Reviews de todos usuários</h1>
         <hr>
         <div id="albuns-container" class="albuns-container">
-            <!-- Os álbuns serão carregados aqui dinamicamente -->
         </div>
     </div>
 
@@ -178,7 +178,7 @@
       <p>&copy; 2025 review.it — Todos os direitos reservados.</p>
       <ul class="footer-links">
         <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="musicas.html">Músicas</a></li>
+        <li><a href="musicas.html">Álbums</a></li>
         <li><a href="filmes.html">Filmes</a></li>
         <li><a href="sobremim.html">Sobre</a></li>
         <li><a href="meuperfil.html">Perfil</a></li>
@@ -189,7 +189,7 @@
 
 <script>
   if (!sessionStorage.ID_USUARIO) {
-    window.location.href = "login.html"; // ajuste o nome da sua página de login se necessário
+    window.location.href = "login.html"; 
 }
 
   listar()
@@ -206,7 +206,6 @@
                 if (resposta.ok) {
                     return resposta.json(); 
                 } else if (resposta.status === 204) {
-                    // Caso não haja álbuns
                     const container = document.getElementById("albuns-container");
                     container.innerHTML = "<p>Nenhum álbum encontrado!</p>";
                     return [];
@@ -288,12 +287,12 @@ function adicionar() {
   formData.append('nota', notaVar);
   formData.append('ja_escutei', ja_escuteiVar);
   formData.append('review', reviewVar);
-  formData.append('capa_album', capaAlbumFile); // arquivo!
+  formData.append('capa_album', capaAlbumFile); 
   formData.append('fk_idUsuario', sessionStorage.ID_USUARIO);
 
   fetch("/album/adicionar", {
     method: "POST",
-    body: formData // não precisa de headers!
+    body: formData 
   }).then(function (resposta) {
     if (resposta.ok) {
       cardErro.style.display = "block";

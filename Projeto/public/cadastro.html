@@ -21,10 +21,16 @@
         <div class="containerHeader">
           <ul class="navbar">
             <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="musicas.html">Músicas</a></li>
+            <li><a href="musicas.html">Álbums</a></li>
             <li><a href="sobremim.html">Sobre</a></li>
             <li><a href="cadastro.html">Cadastrar</a></li>
-             <li><a href="perfil.html">Perfil</a></li>
+            <li class="dropdown">
+                <a href="#" id="perfil-link">Perfil</a>
+                <ul class="dropdown-content">
+                    <li><a href="perfil.html">Ver Perfil</a></li>
+                    <li><a href="#" onclick="logout()">Logout</a></li>
+                </ul>
+            </li>
           </ul>
         </div>
       </header>
@@ -39,10 +45,6 @@
           <div class="card card-cadastro">
             <h2>Cadastre-se</h2>
             <div class="formulario">
-              <!--
-                             Para inserir mais um campo, copie uma das inputs abaixo.
-                             Assim que inserir vá para o script abaixo.
-                         -->
               <div class="campo">
                 <span>Nome:</span>
                 <input id="nome_input" type="text" placeholder="Seu nome" />
@@ -81,7 +83,7 @@
           <p>&copy; 2025 review.it — Todos os direitos reservados.</p>
           <ul class="footer-links">
             <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="musicas.html">Músicas</a></li>
+            <li><a href="musicas.html">Álbums</a></li>
             <li><a href="filmes.html">Filmes</a></li>
             <li><a href="sobremim.html">Sobre</a></li>
             <li><a href="meuperfil.html">Perfil</a></li>
@@ -91,21 +93,16 @@
 </body>
 <script>
 
-  // Array para armazenar empresas cadastradas para validação de código de ativação 
   let listaEmpresasCadastradas = [];
 
   function cadastrar() {
-    // aguardar();
 
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
     var idadeVar = nasc_input.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
     var idEmpresaVincular
-    // Verificando se há algum campo em branco
     if (
       nomeVar == "" ||
       emailVar == "" ||
@@ -125,15 +122,12 @@
 
 
 
-    // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
         idadeServer: idadeVar,
         emailServer: emailVar,
@@ -169,7 +163,6 @@
     return false;
   }
 
-  // Listando empresas cadastradas 
   function listar() {
     fetch("/empresas/listar", {
       method: "GET",

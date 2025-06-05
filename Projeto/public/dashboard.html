@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/dashboards.css">
     <link rel="icon" type="image/x-icon" href="assets/imgs/Adobe Express - file.png">
-    
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Dashboard</title>
 </head>
 
@@ -21,8 +21,8 @@
         </div>
         <div class="containerHeader">
             <ul class="navbar">
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="musicas.html">Músicas</a></li>
+                <li><a style="color: #8D0801; font-size: 17px; font-weight: 600;" href="index.html">review.it</a></li>
+                <li><a href="musicas.html">Álbums</a></li>
                 <li><a href="sobremim.html">Sobre</a></li>
                 <li><a href="cadastro.html">Cadastrar</a></li>
                 <li class="dropdown">
@@ -36,19 +36,57 @@
         </div>
     </header>
     <div class="mainCard">
-        <hr>
-        <h1>Os mais críticos.</h1>
-        <hr>
+        <h1>Os mais críticos.
+
+            <hr>
+        </h1>
+
+    </div>
+    <div class="mainGraficos">
         <div class="graficos">
-           
+
         </div>
     </div>
+    <div class="midGraficos">
+        <div class="container1">
+            <h1>Gêneros mais escutados.</h1>
+            <hr>
+            <div class="graficos2">
+
+                <canvas id="graficoGenero" width="400px" height="400px"></canvas>
+            </div>
+        </div>
+        <div class="container2">
+            <h1>Décadas mais escutadas.</h1>
+            <hr>
+            <div class="graficos3">
+                <canvas id="graficoFaixaAnos"></canvas>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+
+            <p>&copy; 2025 review.it — Todos os direitos reservados.</p>
+            <ul class="footer-links">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="musicas.html">Álbums</a></li>
+                <li><a href="filmes.html">Filmes</a></li>
+                <li><a href="sobremim.html">Sobre</a></li>
+                <li><a href="meuperfil.html">Perfil</a></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 <script>
+    if (!sessionStorage.ID_USUARIO) {
+        window.location.href = "login.html";
+    }
+
 
     reviewsUsuarios()
 
-    function reviewsUsuarios(){
+    function reviewsUsuarios() {
         console.log("entrei na function")
         fetch(`/usuarios/reviewsUsuarios`, {
             method: "GET",
@@ -58,9 +96,8 @@
         })
             .then((resposta) => {
                 if (resposta.ok) {
-                    return resposta.json(); 
+                    return resposta.json();
                 } else if (resposta.status === 204) {
-                    // Caso não haja álbuns
                     const container = document.querySelector(".graficos");
                     container.innerHTML = "<p>Erro!</p>";
                     return [];
@@ -69,23 +106,22 @@
                 }
             }).then((reviews) => {
                 const container = document.querySelector(".graficos");
-                container.innerHTML = ""; 
+                container.innerHTML = "";
                 if (reviews.length === 0) {
                     container.innerHTML = "<p>Nenhum usuário com reviews encontrados.</p>";
                     return;
                 }
                 reviews.forEach((usuario) => {
-                   const usuarioCard = document.createElement("div");
-                   usuarioCard.classList.add("usuario-card"); 
+                    const usuarioCard = document.createElement("div");
+                    usuarioCard.classList.add("usuario-card");
 
-                   usuarioCard.innerHTML = `
+                    usuarioCard.innerHTML = `
                         <div class="nome-usuario"> 
                             <img src="assets/${usuario.imagem_perfil}">
-                            <h1>${usuario.nome}</h1>
+                            <h1>${usuario.nome.split(' ')[0]}</h1>
                             <p>Total de reviews: <br> <label class"numero">${usuario.total_reviews}</label></p>
                         </div>
-`                           ;
-
+                        `;
                     container.appendChild(usuarioCard);
                 });
             })
@@ -94,6 +130,151 @@
                 const container = document.querySelector(".graficos");
                 container.innerHTML = "<p>Erro ao carregar.</p>";
             });
-}
+    }
 
+
+    obterGraficoGeneros();
+
+    function obterGraficoGeneros() {
+        fetch('/metricas/percentual-generos', {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then(res => res.json())
+            .then(data => {
+                const labels = data.map(item => item.genero);
+                const valores = data.map(item => item.percentual);
+
+                const ctx = document.getElementById('graficoGenero');
+                new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            data: valores,
+                            backgroundColor: [
+                                '#8D0801',
+                                '#F6AA1C',
+                                '#A40E4C',
+                                '#255C99',
+                                '#F97316',
+                                '#F4D58D'
+                            ],
+                            borderColor: '#000000',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        plugins: {
+                            legend: {
+                                labels:
+                                {
+                                    color: "#000000",
+                                    font: {
+                                        size: 18
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(erro => {
+                console.error("Erro ao carregar os gêneros:", erro);
+            });
+    }
+
+    graficoAnos()
+
+    function graficoAnos() {
+        console.log("entrei no gráficoAnos")
+        fetch('/metricas/grafico-anos', {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        }).then(res => res.json())
+            .then(data => {
+
+                //criei essa função para agrupar por faixa de década os anos para o gŕafico
+                const faixaDecadas = {
+                    '2010-2020': 0,
+                    '2000-2009': 0,   //criei esse json para nomear os anos e 
+                    '1990-1999': 0,   //guardar eventualmente
+                    '1980-1989': 0,
+                    '1970-1979': 0,
+                };
+
+                data.forEach(item => {
+                    const ano = item.ano_lancamento;
+                    if (ano >= 2010 && ano <= 2020) {
+                        faixaDecadas['2010-2020'] += item.quantidade;
+                    } else if (ano >= 2000 && ano <= 2009) {
+                        faixaDecadas['2000-2009'] += item.quantidade;
+                    } else if (ano >= 1990 && ano <= 1999) {
+                        faixaDecadas['1990-1999'] += item.quantidade; //guardando os anos 
+                    } else if (ano >= 1980 && ano <= 1989) { //nos lugares respectivos
+                        faixaDecadas['1980-1989'] += item.quantidade;
+                    } else if (ano >= 1970 && ano <= 1979) {
+                        faixaDecadas['1970-1979'] += item.quantidade;
+                    }
+                });
+                console.log(faixaDecadas) // testando
+                const anos = Object.keys(faixaDecadas);    //achei esse método que pega todas as chaves de uma array (anos)
+                const quantidade = Object.values(faixaDecadas); //e esse pega os valores dessas chaves (quantidade)
+                console.log(anos)
+                console.log(quantidade)
+
+                const ctx = document.getElementById('graficoFaixaAnos');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: anos,
+                        datasets: [{
+                            label: "Faixas",
+                            data: quantidade,
+                            backgroundColor: [
+                                '#8D0801',
+                                '#F6AA1C',
+                                '#A40E4C',
+                                '#255C99',
+                                '#F97316',
+                            ],
+                            borderColor: '#000000',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        plugins: {
+                            legend: {
+                                
+                                labels: {
+                                    color: "#000000",
+                                    font: {
+                                        size: 15    
+                                    }
+                                }
+                            },
+                            title: {
+
+                            }
+                        }, 
+                        scales: {
+        y: {
+            ticks: {
+                font: {
+                    size: 20 
+                },
+                color: "#000000"
+            }
+        }
+    }
+                    }
+                })
+
+            })
+    }
 </script>
