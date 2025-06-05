@@ -49,6 +49,14 @@
         </div>
     </div>
 
+<div class="albuns-favoritos">
+    <h1>Albúms Favoritos</h1>
+    <hr>
+    <div id="favoritos-container" class="favoritos-container">
+
+    </div>
+</div>
+
 
 
 </body>
@@ -159,6 +167,65 @@ function mostrarPerfil() {
                 container.innerHTML = "<p>Erro ao carregar os álbuns.</p>";
             });
     }
+
+listarFavoritos()
+
+function listarFavoritos(){
+       const idUsuario = sessionStorage.ID_USUARIO;
+        console.log("Id do usuario", idUsuario);
+        fetch(`/favoritar/listar/${idUsuario}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+             },
+        })
+            .then((resposta) => {
+                if (resposta.ok) {
+                    return resposta.json(); 
+                } else if (resposta.status === 204) {
+                    const container = document.getElementById("favoritos-container");
+                    container.innerHTML = "<p>Nenhum álbum encontrado!</p>";
+                    return [];
+                } else {
+                    throw new Error("Erro ao buscar álbuns.");
+                }
+            })
+            .then((albuns) => {
+                const container = document.getElementById("favoritos-container");
+                container.innerHTML = ""; 
+                albuns.forEach((album) => {
+                    const albumCard = document.createElement("div");
+                    albumCard.classList.add("album-card");
+
+                    albumCard.innerHTML = `
+                        <h3><i>❤️${album.nome_banda} - ${album.nome_album}❤️</i></h3>
+                        <img src="assets/${album.capa_album}" alt="Capa do álbum" style="width:350px;   height:350px;">
+                        <div class="rows">
+                            <div class="row1">
+                                <p><strong>Ano de Lançamento:</strong> ${album.ano_lancamento}</p>
+                                <p><strong>Já escutou:</strong> ${album.ja_escutei ? "Sim" : "Não"}</p>
+                            </div>
+                            <div class="row2">
+                                <p><strong>Gênero:</strong> ${album.genero}</p>
+                                <p><strong>Nota:</strong> ${album.nota}/10</p>
+                            </div>
+                       
+                        </div>
+                        <div class="row3"> 
+                            <p><strong>Review:</strong> ${album.review}</p>
+                        </div> 
+                                           `;
+
+                    container.appendChild(albumCard);
+                });
+            })
+            .catch((erro) => {
+                console.error("Erro ao carregar os álbuns:", erro);
+                const container = document.getElementById("albuns-container");
+                container.innerHTML = "<p>Erro ao carregar os álbuns.</p>";
+            });
+    }
+
 
 function logout() {
     sessionStorage.clear();

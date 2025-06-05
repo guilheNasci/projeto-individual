@@ -240,6 +240,7 @@
                         </div>
                         <div class="roww3"> 
                             <p><strong>Review:</strong> ${album.review}</p>
+                            <button onclick="favoritarAlbum(${album.id})">Favoritar</button>
                         </div> 
                                            `;
 
@@ -253,7 +254,30 @@
             });
 }
 
-
+function favoritarAlbum(idAlbum) {
+    const idUsuario = sessionStorage.ID_USUARIO;
+    fetch("/favoritar/adicionar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            idUsuario: idUsuario,
+            idAlbum: idAlbum
+        })
+    })
+    .then(res => {
+        if (res.ok) {
+            alert("Álbum favoritado!");
+        } else {
+            alert("Erro ao favoritar álbum.");
+        }
+    })
+    .catch(err => {
+        console.error("Erro ao favoritar:", err);
+        alert("Erro ao favoritar álbum.");
+    });
+}
 
 function adicionar() {
   var nome_bandaVar = nome_banda.value;

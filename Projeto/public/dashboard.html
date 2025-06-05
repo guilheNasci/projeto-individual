@@ -223,16 +223,20 @@
 
                 data.forEach(item => {
                     const ano = item.ano_lancamento;
-                    if (ano >= 2010 && ano <= 2020) {
+                    if (ano >= 2021 && ano <= 2030) {
+                        faixaDecadas['2021-2030'] = (faixaDecadas['2021-2030'] || 0) + item.quantidade;
+                    } else if (ano >= 2010 && ano <= 2020) {
                         faixaDecadas['2010-2020'] += item.quantidade;
                     } else if (ano >= 2000 && ano <= 2009) {
                         faixaDecadas['2000-2009'] += item.quantidade;
                     } else if (ano >= 1990 && ano <= 1999) {
-                        faixaDecadas['1990-1999'] += item.quantidade; //guardando os anos 
-                    } else if (ano >= 1980 && ano <= 1989) { //nos lugares respectivos
+                        faixaDecadas['1990-1999'] += item.quantidade;
+                    } else if (ano >= 1980 && ano <= 1989) {
                         faixaDecadas['1980-1989'] += item.quantidade;
                     } else if (ano >= 1970 && ano <= 1979) {
                         faixaDecadas['1970-1979'] += item.quantidade;
+                    } else if (ano >= 1960 && ano <= 1970) {
+                        faixaDecadas['1960-1970'] = (faixaDecadas['1960-1970'] || 0) + item.quantidade;
                     }
                 });
                 console.log(faixaDecadas) // testando
@@ -255,6 +259,7 @@
                                 '#A40E4C',
                                 '#255C99',
                                 '#F97316',
+                                '#F0D45E'
                             ],
                             borderColor: '#000000',
                             borderWidth: 2
