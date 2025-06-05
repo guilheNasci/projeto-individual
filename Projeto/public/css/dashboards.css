@@ -9,7 +9,7 @@ body {
     margin: 0;
     padding: 0;
     background: linear-gradient(1deg, rgba(42, 123, 155, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(244, 213, 141, 1) 89%, rgba(244, 213, 141, 1) 40%);
-    height: 1500px;
+    height: 2000px;
      -ms-overflow-style: none;  
   scrollbar-width: none;
     background-repeat: no-repeat;
@@ -313,13 +313,91 @@ hr {
 }
 
 
+.lowGraficos {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    
+}
 
 
 
+.graficos4 {
+    border-radius:   72% 28% 69% 31% / 20% 72% 28% 80% ;  
+    padding: 30px 30px;
+    background: #2A7B9B;
+    background: linear-gradient(114deg, rgba(42, 123, 155, 1) 25%, rgba(141, 8, 1, 1) 100%);
+    border: #001427 2px solid;
+    width: 90%;
+    height: 500px;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 80px;
+    flex-wrap: wrap;
+}
 
 
+.banda-card {
+    border-radius: 50px;
+    padding: 35px;
+    justify-content: center;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 165px;
+    height: 165px;
+}
 
 
+.bandaCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.banda-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 1px solid #000;
+    background: #f4d58d;
+}
+
+
+.bandaCard p {
+    margin: 0;
+    text-align: center;
+    font-size: 18px;
+    color: #8D0801;
+    background: #ffffff;
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(244, 213, 141, 1) 100%);
+    padding: 0 10px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+
+.bandaCard h1 {
+    margin: 0;
+    padding: 0 10px;
+    font-size: 18px;
+    color: #8D0801;
+    background: #ffffff;
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(244, 213, 141, 1) 100%);
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.bandaCard label {
+    font-size: 20px;
+    font-weight: bolder;
+    text-decoration: underline;
+    color: #2A7B9B;
+}
 
 
 

@@ -34,8 +34,25 @@ function obterPercentualGeneros() {
     return database.executar(instrucao);
 }
 
+function topAlbums(){
+    var instrucao = `
+       SELECT 
+            nome_banda, COUNT(*) AS total_albuns, MIN(capa_album) AS capa_album
+            FROM album
+            GROUP BY nome_banda
+            ORDER BY total_albuns DESC
+            LIMIT 5;
+    
+    `
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao); 
+}
+
+
+
 module.exports = {
     obterMetricas,
     obterPercentualGeneros,
+    topAlbums,
     graficoAnos
 }

@@ -16,6 +16,20 @@ function graficoAnos(req, res) {
         });
 }
 
+function topAlbums(req, res) {
+    metricaModel.topAlbums()
+     .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send(); 
+            }
+        })
+        .catch(function (erro) {
+            res.status(500).json(erro.sqlMessage);
+        });
+}
+
 
 function obterPercentualGeneros(req, res) {
     metricaModel.obterPercentualGeneros()
@@ -33,6 +47,7 @@ function obterPercentualGeneros(req, res) {
 
 module.exports = {
     graficoAnos,
+    topAlbums,
     obterPercentualGeneros
 }
 

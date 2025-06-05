@@ -14,4 +14,7 @@ router.get("/grafico-anos", function(req, res){
     metricaController.graficoAnos(req, res);
 })
 
+router.get("/albums-mais-escutados", function(req, res){
+    metricaController.topAlbums(req, res);
+})
 module.exports = router;

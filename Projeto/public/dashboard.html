@@ -64,6 +64,20 @@
             </div>
         </div>
     </div>
+    <div class="mainCard">
+        <h1>Os mais adicionados.
+
+            <hr>
+        </h1>
+
+    </div>
+    
+    <div class="lowGraficos">
+        <div class="graficos4">
+
+        </div>
+    </div>   
+ 
     <footer class="footer">
         <div class="footer-content">
 
@@ -276,5 +290,52 @@
                 })
 
             })
+    }
+
+topAlbums()  
+
+
+ function topAlbums() {
+        fetch('/metricas/albums-mais-escutados', {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        }) .then((resposta) => {
+                if (resposta.ok) {
+                    return resposta.json();
+                } else if (resposta.status === 204) {
+                    const container = document.querySelector(".graficos4");
+                    container.innerHTML = "<p>Erro!</p>";
+                    return [];
+                } else {
+                    throw new Error("Erro na API.");
+                }
+            }).then((quantidade) => {
+                const container = document.querySelector(".graficos4");
+                container.innerHTML = "";
+                if (quantidade.length === 0) {
+                    container.innerHTML = "<p>Nenhum álbum encontrado.</p>";
+                    return;
+                }
+                quantidade.forEach((artista) => {
+                    const bandaCard = document.createElement("div");
+                    bandaCard.classList.add("banda-card");
+
+                    bandaCard.innerHTML = `
+                        <div class="bandaCard"> 
+                            <img src="assets/${artista.capa_album}">
+                            <h1>${artista.nome_banda}</h1>
+                            <p>Total de reviews: <br> <label class"numero">${artista.total_albuns}</label></p>
+                        </div>
+                        `;
+                    container.appendChild(bandaCard);
+                });
+            })
+            .catch((erro) => {
+                console.error("Erro ao carregar:", erro);
+                const container = document.querySelector(".graficos");
+                container.innerHTML = "<p>Erro ao carregar.</p>";
+            });
     }
 </script>
