@@ -32,7 +32,7 @@ function mostrarPerfil(req, res){
             if (resultado.length > 0) {
                 res.status(200).json(resultado);
             } else {
-                res.status(204).send(); // Nenhum álbum encontrado
+                res.status(204).send(); 
             }
         })
         .catch(function(erro){

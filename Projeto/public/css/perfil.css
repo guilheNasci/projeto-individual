@@ -241,4 +241,10 @@ hr{
     font-family: "Roboto Slab", sans-serif;
 }
 
+.favoritos-container {
+  display: flex;
+  gap: 23px;
+  justify-content: center;
+}
+
 

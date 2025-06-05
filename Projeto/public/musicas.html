@@ -22,7 +22,6 @@
       <ul class="navbar">
         <li><a href="dashboard.html">Dashboard</a></li>
         <li><a href="musicas.html">Álbums</a></li>
-        <li><a href="sobremim.html">Sobre</a></li>
         <li><a href="cadastro.html">Cadastrar</a></li>
         <li class="dropdown">
           <a href="#" id="perfil-link">Perfil</a>
@@ -180,7 +179,6 @@
         <li><a href="dashboard.html">Dashboard</a></li>
         <li><a href="musicas.html">Álbums</a></li>
         <li><a href="filmes.html">Filmes</a></li>
-        <li><a href="sobremim.html">Sobre</a></li>
         <li><a href="meuperfil.html">Perfil</a></li>
       </ul>
     </div>
@@ -268,14 +266,14 @@ function favoritarAlbum(idAlbum) {
     })
     .then(res => {
         if (res.ok) {
-            alert("Álbum favoritado!");
+            alert("Review favoritada!!");
         } else {
-            alert("Erro ao favoritar álbum.");
+            alert("Erro ao favoritar review.");
         }
     })
     .catch(err => {
         console.error("Erro ao favoritar:", err);
-        alert("Erro ao favoritar álbum.");
+        alert("Erro ao favoritar review.");
     });
 }
 
