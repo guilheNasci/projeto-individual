@@ -1,20 +1,16 @@
-create database reviewit;
-
-
-use reviewit;
-
+CREATE DATABASE IF NOT EXISTS reviewit;
+USE reviewit;
 
 CREATE TABLE usuario (
-	idUsuario INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50) NOT NULL,
-	email VARCHAR(50) NOT NULL,
-	senha VARCHAR(50) NOT NULL,
-    idade date
-
+    idUsuario INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    senha VARCHAR(50) NOT NULL,
+    idade DATE,
+    imagem_perfil VARCHAR(255) DEFAULT '711769.png'
 );
 
-
-CREATE TABLE albuns (
+CREATE TABLE album (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome_banda VARCHAR(255) NOT NULL, 
     nome_album VARCHAR(255) NOT NULL, 
@@ -24,40 +20,19 @@ CREATE TABLE albuns (
     ja_escutei BOOLEAN,
     review TEXT, 
     capa_album VARCHAR(255),
-    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
-    
-    
+    fk_idUsuario INT,
+    FOREIGN KEY (fk_idUsuario) REFERENCES usuario(idUsuario)
 );
 
-alter table albuns drop column data_criacao;
+CREATE TABLE favoritar (
+    idFavorito INT PRIMARY KEY AUTO_INCREMENT,
+    fk_idUsuario INT,
+    fk_idAlbum INT,
+    data_favorito TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (fk_idUsuario) REFERENCES usuario(idUsuario),
+    FOREIGN KEY (fk_idAlbum) REFERENCES album(id)
+);
 
-rename table albuns to album;
-
-select * from album;
-
-ALTER TABLE albuns add column fk_idUsuario int;
-
-ALTER TABLE albuns ADD CONSTRAINT fk_idUsuario FOREIGN KEY (fk_idUsuario) REFERENCES usuario(idUsuario);
-
-alter table usuario drop column idade;
-
-alter table usuario ADD column idade date;
-
-
-select * from albuns;
-
-INSERT INTO usuario (nome, email, senha) 
-values("Jorge","gui@gmail.com","123");
-select * from usuario;
-
-
-INSERT INTO usuario(nome, idade, email, senha)
-values("Joao","2000-02-05","joao@sptech.school","joao123");
-
-
-
-select idade from usuario where idUsuario = 3;
-
-select * from album;
-
-select * from usuario; 
+UPDATE usuario
+SET imagem_perfil = '19c299a3-9365-426e-88ee-d5fffa0356ac.png'
+WHERE imagem_perfil IS NULL;
